@@ -13,7 +13,7 @@
   <body>
     <header class="topbar">
       <div class="container row">
-        <a class="brand" href="#" aria-label="Go to top" id="brandTopLink">
+        <a class="brand" href="./index.html" aria-label="Reload home" id="brandTopLink">
           <span class="brand-mark">♾️</span>
           <span class="brand-word">stewrobot</span>
         </a>
@@ -757,18 +757,6 @@
           commentSubmitting = false;
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = (i18n[document.documentElement.lang]||i18n.en).comment_submit || 'Comment'; }
         }
-      });
-
-      const brandTopLink = document.getElementById('brandTopLink');
-      brandTopLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-        document.querySelectorAll('.home-section').forEach((el) => { el.style.display = ''; });
-        document.querySelectorAll('.page-section').forEach((el) => { el.style.display = 'none'; });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
-          el.classList.toggle('active', el.dataset.view === 'home');
-        });
       });
 
       const savedTheme = localStorage.getItem('stewrobot_theme');
