@@ -25,9 +25,12 @@
             <a href="#contact" data-i18n="nav_contact">Community</a>
           </nav>
           <div class="lang-switch" aria-label="Language switcher">
-            <button class="lang-btn" data-lang="ko">KR</button>
-            <button class="lang-btn active" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="ja">JP</button>
+            <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">🌐</button>
+            <div class="lang-menu" id="langMenu" role="menu" aria-hidden="true">
+              <button class="lang-btn" data-lang="ko" role="menuitem">한국어</button>
+              <button class="lang-btn active" data-lang="en" role="menuitem">English</button>
+              <button class="lang-btn" data-lang="ja" role="menuitem">日本語</button>
+            </div>
           </div>
         </div>
       </div>
@@ -251,6 +254,21 @@
         }
       };
 
+      const langToggle = document.getElementById('langToggle');
+      const langMenu = document.getElementById('langMenu');
+
+      function closeLangMenu() {
+        langMenu.classList.remove('open');
+        langToggle.setAttribute('aria-expanded', 'false');
+        langMenu.setAttribute('aria-hidden', 'true');
+      }
+
+      function openLangMenu() {
+        langMenu.classList.add('open');
+        langToggle.setAttribute('aria-expanded', 'true');
+        langMenu.setAttribute('aria-hidden', 'false');
+      }
+
       function applyLang(lang) {
         document.documentElement.lang = lang;
 
@@ -268,8 +286,20 @@
         localStorage.setItem('stewrobot_lang', lang);
       }
 
+      langToggle.addEventListener('click', () => {
+        if (langMenu.classList.contains('open')) closeLangMenu();
+        else openLangMenu();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.lang-switch')) closeLangMenu();
+      });
+
       document.querySelectorAll('.lang-btn').forEach((btn) => {
-        btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+        btn.addEventListener('click', () => {
+          applyLang(btn.dataset.lang);
+          closeLangMenu();
+        });
       });
 
       const savedLang = localStorage.getItem('stewrobot_lang');
