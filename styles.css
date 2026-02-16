@@ -564,13 +564,17 @@ body[data-theme="atelier"] .board-tab-btn.active {
 
 .main-nav .community-link {
   color: #d6e4ff;
-  border: 1px solid rgba(124, 156, 255, 0.35);
-  border-radius: 8px;
-  padding: 3px 10px;
 }
 
-.main-nav .community-link.active {
-  border-color: transparent;
+.main-nav .community-link::after {
+  content: '•';
+  margin-left: 6px;
+  font-size: 0.78rem;
+  color: rgba(124, 156, 255, 0.75);
+}
+
+.main-nav .community-link.active::after {
+  color: var(--accent-2);
 }
 
 .progress-log {
@@ -631,7 +635,10 @@ body[data-theme="atelier"] .board-tab-btn.active {
 
 body[data-theme="atelier"] .main-nav .community-link {
   color: #473628;
-  border-color: rgba(185, 130, 76, 0.45);
+}
+
+body[data-theme="atelier"] .main-nav .community-link::after {
+  color: rgba(185, 130, 76, 0.8);
 }
 
 body[data-theme="atelier"] .progress-log,
