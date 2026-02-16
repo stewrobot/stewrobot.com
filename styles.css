@@ -448,3 +448,38 @@ body[data-theme="atelier"] .hint,
 body[data-theme="atelier"] .lang-state {
   color: #5f5247;
 }
+
+body[data-theme="atelier"] .theme-toggle,
+body[data-theme="atelier"] .lang-toggle {
+  color: #6f5f52;
+}
+
+body[data-theme="atelier"] .theme-toggle:hover,
+body[data-theme="atelier"] .lang-toggle:hover {
+  color: #2f241c;
+  background: rgba(122, 93, 63, 0.14);
+}
+
+body[data-theme="atelier"] .theme-menu,
+body[data-theme="atelier"] .lang-menu {
+  background: rgba(255, 246, 236, 0.94);
+  border-color: #d8c2a9;
+  box-shadow: 0 10px 24px rgba(78, 48, 22, 0.14);
+}
+
+body[data-theme="atelier"] .theme-btn,
+body[data-theme="atelier"] .lang-btn {
+  color: #5f5247;
+}
+
+body[data-theme="atelier"] .theme-btn:hover,
+body[data-theme="atelier"] .lang-btn:hover {
+  background: rgba(194, 146, 95, 0.16);
+  color: #2b2017;
+}
+
+body[data-theme="atelier"] .theme-btn.active,
+body[data-theme="atelier"] .lang-btn.active {
+  background: #c87e42;
+  color: #fff8f2;
+}
