@@ -19,7 +19,8 @@
         </a>
         <div class="top-actions">
           <nav class="main-nav" id="mainNav">
-            <a href="#" class="nav-link active" data-view="overview" data-i18n="nav_about">Overview</a>
+            <a href="#" class="nav-link active" data-view="home" data-i18n="nav_home">Home</a>
+            <a href="#" class="nav-link" data-view="overview" data-i18n="nav_about">Overview</a>
             <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
             <a href="#" class="nav-link" data-view="labs" data-i18n="nav_labs">Labs</a>
             <a href="#" class="nav-link" data-view="deploy" data-i18n="nav_deploy">Deploy</a>
@@ -162,7 +163,26 @@
             <hr class="sep" />
             <h4 data-i18n="comments_title">Comments</h4>
             <div id="communityDetailComments" class="comment-mini-list"></div>
-            
+
+            <form id="communityCommentForm" class="community-form comment-form">
+              <div class="form-grid">
+                <div>
+                  <label data-i18n="field_author">Author</label>
+                  <input name="author" required maxlength="100" placeholder="author" />
+                </div>
+                <div>
+                  <label data-i18n="field_password">Password</label>
+                  <input name="password" type="password" required minlength="4" placeholder="min 4 chars" />
+                </div>
+              </div>
+              <div>
+                <label data-i18n="comment_write">Write a comment</label>
+                <textarea name="content" rows="4" required placeholder="leave a comment"></textarea>
+              </div>
+              <div class="panel-actions">
+                <button class="btn primary" type="submit" data-i18n="comment_submit">Comment</button>
+              </div>
+            </form>
           </section>
 
           <div class="board-table-wrap" id="communityListWrap">
@@ -181,6 +201,11 @@
                 <tr><td colspan="6" data-i18n="board_loading">Loading posts...</td></tr>
               </tbody>
             </table>
+            <div class="board-pager">
+              <button class="btn" id="communityPrevPage" type="button" data-i18n="pager_prev">← Prev</button>
+              <span id="communityPageInfo" class="small muted">1 / 1</span>
+              <button class="btn" id="communityNextPage" type="button" data-i18n="pager_next">Next →</button>
+            </div>
           </div>
         </div>
       </section>
@@ -247,7 +272,7 @@
 
       const i18n = {
         ko: {
-          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '보드', nav_labs: '랩스', nav_deploy: '배포',
+          nav_home: '홈', nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '보드', nav_labs: '랩스', nav_deploy: '배포',
           lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: '보드 중심 런칭, 진행 중.',
@@ -264,7 +289,7 @@
           live_label: '라이브 보드 URL', live_chip: '온라인', live_hint: '커뮤니티 보드는 HTTPS로 운영 중입니다.',
           board_title: '📋 보드', board_api_link: 'API 문서 보기', board_open_full: '커뮤니티 보드 열기 ↗',
           board_note: '아래에는 라이브 커뮤니티 게시판의 최신 글이 일반적인 게시판 형식으로 표시됩니다.',
-          board_tab_home: '📋 목록', board_tab_write: '✏️ 글쓰기', board_tab_docs: 'API 문서', board_total_label: '전체', board_col_id: '번호', board_col_title: '제목', board_col_author: '작성자', board_col_created: '작성일', board_col_views: '조회', board_col_comments: '댓글', board_loading: '게시글 불러오는 중...', board_empty: '게시글이 없습니다.', back_to_list: '목록으로', comments_title: '댓글', write_cancel: '취소', write_submit: '등록', field_content: '내용', field_title: '제목', field_password: '비밀번호', field_author: '작성자', write_title: '✏️ 글쓰기',
+          board_tab_home: '📋 목록', board_tab_write: '✏️ 글쓰기', board_tab_docs: 'API 문서', board_total_label: '전체', board_col_id: '번호', board_col_title: '제목', board_col_author: '작성자', board_col_created: '작성일', board_col_views: '조회', board_col_comments: '댓글', board_loading: '게시글 불러오는 중...', board_empty: '게시글이 없습니다.', back_to_list: '목록으로', comments_title: '댓글', write_cancel: '취소', write_submit: '등록', field_content: '내용', field_title: '제목', field_password: '비밀번호', field_author: '작성자', write_title: '✏️ 글쓰기', comment_write: '댓글 작성', comment_submit: '댓글 등록', pager_prev: '← 이전', pager_next: '다음 →',
           post1_title: '[공지] stewrobot 로드맵 v0.1', post1_body: '모바일 베타 일정과 웹 기능 우선순위를 공유합니다. 댓글로 피드백 남겨주세요.', post1_meta: 'admin · 22:31 · 댓글 4',
           post2_title: '첫 사용자 테스트 참여자 모집', post2_body: 'iOS/Android 클로즈드 베타 예정. 참여 희망자는 보드에서 알려주세요.', post2_meta: 'team · 21:52 · 댓글 2',
           post3_title: 'Q&A: 도메인 + HTTPS 타임라인', post3_body: 'DNS 전파/인증서 발급 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.', post3_meta: 'stewrobot · 20:07 · 댓글 7',
@@ -282,7 +307,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         en: {
-          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Board', nav_labs: 'Labs', nav_deploy: 'Deploy',
+          nav_home: 'Home', nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Board', nav_labs: 'Labs', nav_deploy: 'Deploy',
           lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
@@ -322,7 +347,7 @@
           live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
           board_title: '📋 Board', board_api_link: 'API docs', board_open_full: 'Open community board ↗',
           board_note: 'A conventional board-style view is shown below with live posts from the community service.',
-          board_tab_home: '📋 List', board_tab_write: '✏️ Write', board_tab_docs: 'API Docs', board_total_label: 'Total', board_col_id: 'No.', board_col_title: 'Title', board_col_author: 'Author', board_col_created: 'Created', board_col_views: 'Views', board_col_comments: 'Comments', board_loading: 'Loading posts...', board_empty: 'No posts yet.', back_to_list: 'Back to list', comments_title: 'Comments', write_cancel: 'Cancel', write_submit: 'Post', field_content: 'Content', field_title: 'Title', field_password: 'Password', field_author: 'Author', write_title: '✏️ Write a post',
+          board_tab_home: '📋 List', board_tab_write: '✏️ Write', board_tab_docs: 'API Docs', board_total_label: 'Total', board_col_id: 'No.', board_col_title: 'Title', board_col_author: 'Author', board_col_created: 'Created', board_col_views: 'Views', board_col_comments: 'Comments', board_loading: 'Loading posts...', board_empty: 'No posts yet.', back_to_list: 'Back to list', comments_title: 'Comments', write_cancel: 'Cancel', write_submit: 'Post', field_content: 'Content', field_title: 'Title', field_password: 'Password', field_author: 'Author', write_title: '✏️ Write a post', comment_write: 'Write a comment', comment_submit: 'Comment', pager_prev: '← Prev', pager_next: 'Next →',
           post1_title: '[Notice] stewrobot roadmap v0.1', post1_body: 'Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.', post1_meta: 'admin · 22:31 · comments 4',
           post2_title: 'Looking for first user test participants', post2_body: 'Closed beta is planned for iOS and Android. Reach out on the board if you want to join.', post2_meta: 'team · 21:52 · comments 2',
           post3_title: 'Q&A: Domain + HTTPS timeline', post3_body: 'We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.', post3_meta: 'stewrobot · 20:07 · comments 7',
@@ -344,7 +369,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         ja: {
-          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: '掲示板', nav_labs: 'ラボ', nav_deploy: 'デプロイ',
+          nav_home: 'ホーム', nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: '掲示板', nav_labs: 'ラボ', nav_deploy: 'デプロイ',
           lang_full: '完了', lang_partial: '一部',
           eyebrow: '♾️ コズミックAIビルダー',
           hero_title: 'ボード中心のローンチ、進行中。',
@@ -361,7 +386,7 @@
           live_label: 'ライブボードURL', live_chip: 'online', live_hint: 'コミュニティボードはHTTPSで稼働中です。',
           board_title: '📋 掲示板', board_api_link: 'API ドキュメント', board_open_full: 'コミュニティボードを開く ↗',
           board_note: '以下にコミュニティ掲示板の最新投稿を一般的な掲示板レイアウトで表示します。',
-          board_tab_home: '📋 一覧', board_tab_write: '✏️ 投稿', board_tab_docs: 'APIドキュメント', board_total_label: '全体', board_col_id: '番号', board_col_title: 'タイトル', board_col_author: '作成者', board_col_created: '作成日時', board_col_views: '閲覧', board_col_comments: 'コメント', board_loading: '読み込み中...', board_empty: '投稿がありません。', back_to_list: '一覧へ', comments_title: 'コメント', write_cancel: 'キャンセル', write_submit: '登録', field_content: '内容', field_title: 'タイトル', field_password: 'パスワード', field_author: '作成者', write_title: '✏️ 投稿',
+          board_tab_home: '📋 一覧', board_tab_write: '✏️ 投稿', board_tab_docs: 'APIドキュメント', board_total_label: '全体', board_col_id: '番号', board_col_title: 'タイトル', board_col_author: '作成者', board_col_created: '作成日時', board_col_views: '閲覧', board_col_comments: 'コメント', board_loading: '読み込み中...', board_empty: '投稿がありません。', back_to_list: '一覧へ', comments_title: 'コメント', write_cancel: 'キャンセル', write_submit: '登録', field_content: '内容', field_title: 'タイトル', field_password: 'パスワード', field_author: '作成者', write_title: '✏️ 投稿', comment_write: 'コメントを書く', comment_submit: 'コメント登録', pager_prev: '← 前へ', pager_next: '次へ →',
           post1_title: '[お知らせ] stewrobot ロードマップ v0.1', post1_body: 'モバイルベータ日程とWeb機能の優先順位を共有します。コメントでフィードバックをお願いします。', post1_meta: 'admin · 22:31 · コメント 4',
           post2_title: '最初のユーザーテスト参加者を募集', post2_body: 'iOS/Android向けクローズドベータを予定。参加希望は掲示板で知らせてください。', post2_meta: 'team · 21:52 · コメント 2',
           post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
@@ -483,7 +508,7 @@
         });
       });
 function setMainView(viewName) {
-        const homeMode = viewName === 'overview' || viewName === 'progress' || viewName === 'labs' || viewName === 'deploy';
+        const homeMode = viewName === 'home' || viewName === 'overview' || viewName === 'progress' || viewName === 'labs' || viewName === 'deploy';
 
         document.querySelectorAll('.home-section').forEach((el) => {
           el.style.display = homeMode ? '' : 'none';
@@ -498,7 +523,9 @@ function setMainView(viewName) {
           el.classList.toggle('active', el.dataset.view === viewName);
         });
 
-        if (viewName === 'overview') {
+        if (viewName === 'home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (viewName === 'overview') {
           document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'progress') {
           document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -535,6 +562,10 @@ function setMainView(viewName) {
         return m[k];
       }
 
+      let communityPage = 1;
+      const COMMUNITY_PAGE_SIZE = 10;
+      let communityCurrentPostId = null;
+
       async function loadCommunityPosts() {
         const tbody = document.getElementById('communityPostsBody');
         const countEl = document.getElementById('communityCount');
@@ -543,9 +574,19 @@ function setMainView(viewName) {
           const res = await fetch('https://board.stewrobot.com/api/posts', { mode: 'cors' });
           if (!res.ok) throw new Error('failed');
           const posts = await res.json();
-          const PAGE_SIZE = 10;
-          const list = Array.isArray(posts) ? posts.slice(0, PAGE_SIZE) : [];
-          if (countEl) countEl.textContent = String(Array.isArray(posts) ? posts.length : list.length);
+          const total = Array.isArray(posts) ? posts.length : 0;
+          const totalPages = Math.max(1, Math.ceil(total / COMMUNITY_PAGE_SIZE));
+          if (communityPage > totalPages) communityPage = totalPages;
+          const start = (communityPage - 1) * COMMUNITY_PAGE_SIZE;
+          const list = Array.isArray(posts) ? posts.slice(start, start + COMMUNITY_PAGE_SIZE) : [];
+          if (countEl) countEl.textContent = String(total);
+
+          const pageInfo = document.getElementById('communityPageInfo');
+          const prevBtn = document.getElementById('communityPrevPage');
+          const nextBtn = document.getElementById('communityNextPage');
+          if (pageInfo) pageInfo.textContent = `${communityPage} / ${totalPages}`;
+          if (prevBtn) prevBtn.disabled = communityPage <= 1;
+          if (nextBtn) nextBtn.disabled = communityPage >= totalPages;
           if (!list.length) {
             tbody.innerHTML = `<tr><td colspan="6">${(i18n[document.documentElement.lang]||i18n.en).board_empty || 'No posts yet.'}</td></tr>`;
             return;
@@ -626,6 +667,7 @@ function setMainView(viewName) {
         const r = await fetch(`https://board.stewrobot.com/api/posts/${postId}`, { mode: 'cors' });
         if (!r.ok) return;
         const post = await r.json();
+        communityCurrentPostId = post.id;
         document.getElementById('communityDetailTitle').textContent = post.title || 'Untitled';
         const views = bumpPostViews(post.id);
         document.getElementById('communityDetailMeta').textContent = `${post.author || 'anonymous'} · ${new Date(post.createdAt || Date.now()).toLocaleString()} · views ${views}`;
@@ -639,7 +681,17 @@ function setMainView(viewName) {
 
       document.getElementById('communityWriteBtn')?.addEventListener('click', toggleCommunityWrite);
       document.getElementById('communityListBtn')?.addEventListener('click', () => {
+        communityPage = 1;
         showCommunityList();
+        loadCommunityPosts();
+      });
+      document.getElementById('communityPrevPage')?.addEventListener('click', () => {
+        if (communityPage <= 1) return;
+        communityPage -= 1;
+        loadCommunityPosts();
+      });
+      document.getElementById('communityNextPage')?.addEventListener('click', () => {
+        communityPage += 1;
         loadCommunityPosts();
       });
       document.getElementById('communityWriteCancel')?.addEventListener('click', showCommunityList);
@@ -666,6 +718,7 @@ function setMainView(viewName) {
             return;
           }
           e.currentTarget.reset();
+          communityPage = 1;
           showCommunityList();
           const tbody = document.getElementById('communityPostsBody');
           if (tbody) tbody.innerHTML = '<tr><td colspan="6">Posted. Refreshing list...</td></tr>';
@@ -673,6 +726,36 @@ function setMainView(viewName) {
         } finally {
           writeSubmitting = false;
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = (i18n[document.documentElement.lang]||i18n.en).write_submit || 'Post'; }
+        }
+      });
+
+      let commentSubmitting = false;
+      document.getElementById('communityCommentForm')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!communityCurrentPostId || commentSubmitting) return;
+        commentSubmitting = true;
+
+        const submitBtn = e.currentTarget.querySelector('button[type="submit"]');
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Posting...'; }
+
+        try {
+          const fd = new FormData(e.currentTarget);
+          const payload = Object.fromEntries(fd.entries());
+          const r = await fetch(`https://board.stewrobot.com/api/posts/${communityCurrentPostId}/comments`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          if (!r.ok) {
+            alert('Failed to create comment. Check fields/password (min 4).');
+            return;
+          }
+          e.currentTarget.reset();
+          await openCommunityDetail(communityCurrentPostId);
+          await loadCommunityPosts();
+        } finally {
+          commentSubmitting = false;
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = (i18n[document.documentElement.lang]||i18n.en).comment_submit || 'Comment'; }
         }
       });
 
@@ -684,7 +767,7 @@ function setMainView(viewName) {
         document.querySelectorAll('.page-section').forEach((el) => { el.style.display = 'none'; });
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
-          el.classList.toggle('active', el.dataset.view === 'overview');
+          el.classList.toggle('active', el.dataset.view === 'home');
         });
       });
 
@@ -696,7 +779,7 @@ function setMainView(viewName) {
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
-          el.classList.toggle('active', el.dataset.view === 'overview');
+          el.classList.toggle('active', el.dataset.view === 'home');
         });
     </script>
   </body>

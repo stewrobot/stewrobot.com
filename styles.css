@@ -1006,3 +1006,18 @@ body[data-theme="atelier"] .comment-badge {
 }
 
 button { cursor: pointer; }
+
+
+.board-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.comment-form {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
