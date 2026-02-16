@@ -1063,3 +1063,13 @@ button { cursor: pointer; }
 .detail-arrow:hover {
   opacity: 1;
 }
+
+
+.section-arrow {
+  margin-left: 8px;
+  text-decoration: none;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
+.section-arrow:hover { opacity: 1; }
