@@ -113,27 +113,27 @@
       </section>
 
       <section id="board" class="container section page-section" data-page="community">
-        <div class="community-header">
-          <h2 data-i18n="board_title">📋 Community Board</h2>
-          <a class="api-link" href="https://board.stewrobot.com/api-docs" rel="noreferrer" data-i18n="board_api_link">API docs</a>
-        </div>
-
-        <div class="community-toolbar">
-          <p class="community-count"><span data-i18n="board_total_label">Total</span> <strong id="communityCount">0</strong></p>
-          <div class="community-actions">
-            <a class="btn primary" href="https://board.stewrobot.com/posts/new" rel="noreferrer" data-i18n="board_tab_write">✏️ Write</a>
+        <div class="community-shell">
+          <div class="community-header">
+            <h2 data-i18n="board_title">📋 Community Board</h2>
+            <a class="api-link" href="https://board.stewrobot.com/api-docs" rel="noreferrer" data-i18n="board_api_link">API docs</a>
           </div>
-        </div>
 
-        <div class="community-board">
+          <div class="community-toolbar">
+            <p class="community-count"><span data-i18n="board_total_label">Total</span> <strong id="communityCount">0</strong></p>
+            <div class="community-actions">
+              <a class="btn write-btn" href="https://board.stewrobot.com/posts/new" rel="noreferrer" data-i18n="board_tab_write">✏️ Write</a>
+            </div>
+          </div>
+
           <div class="board-table-wrap">
             <table class="board-table">
               <thead>
                 <tr>
-                  <th style="width:70px" data-i18n="board_col_id">No.</th>
+                  <th style="width:80px" data-i18n="board_col_id">No.</th>
                   <th data-i18n="board_col_title">Title</th>
                   <th style="width:140px" data-i18n="board_col_author">Author</th>
-                  <th style="width:190px" data-i18n="board_col_created">Created</th>
+                  <th style="width:210px" data-i18n="board_col_created">Created</th>
                   <th style="width:90px" data-i18n="board_col_comments">Comments</th>
                 </tr>
               </thead>
@@ -514,7 +514,19 @@
             tbody.innerHTML = `<tr><td colspan="5">${(i18n[document.documentElement.lang]||i18n.en).board_empty || 'No posts yet.'}</td></tr>`;
             return;
           }
-          tbody.innerHTML = list.map((p) => {
+          const detailed = await Promise.all(list.map(async (p) => {
+            try {
+              const r = await fetch(`https://board.stewrobot.com/api/posts/${p.id}`, { mode: 'cors' });
+              if (!r.ok) return { ...p, commentsCount: 0 };
+              const full = await r.json();
+              const commentsCount = Array.isArray(full.comments) ? full.comments.length : 0;
+              return { ...p, commentsCount };
+            } catch (_e) {
+              return { ...p, commentsCount: 0 };
+            }
+          }));
+
+          tbody.innerHTML = detailed.map((p) => {
             const d = new Date(p.createdAt || Date.now());
             const ds = d.toLocaleString();
             const title = String(p.title || '').replace(/</g,'&lt;');
@@ -523,7 +535,7 @@
               <td><a class="row-link" href="https://board.stewrobot.com/posts/${p.id}" rel="noreferrer">${title}</a></td>
               <td>${p.author || 'anonymous'}</td>
               <td>${ds}</td>
-              <td>0</td>
+              <td><span class="comment-badge">${p.commentsCount || 0}</span></td>
             </tr>`;
           }).join('');
         } catch (_e) {
