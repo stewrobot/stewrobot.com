@@ -268,6 +268,10 @@
     </footer>
 
     <script>
+      if (window.location.pathname.endsWith('/index.html')) {
+        history.replaceState(null, '', '/');
+      }
+
       document.getElementById('y').textContent = new Date().getFullYear();
 
       const i18n = {
