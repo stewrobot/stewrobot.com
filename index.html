@@ -58,6 +58,12 @@
             <p>Production infra wiring (MySQL/PM2/Nginx) is next.</p>
           </article>
         </div>
+
+        <div class="live-slot">
+          <p class="label">Planned live board URL</p>
+          <p><strong>https://board.stewrobot.com</strong> <span class="chip">coming soon</span></p>
+          <p class="hint">As soon as deployment is complete, this link will switch from placeholder to live service.</p>
+        </div>
       </section>
 
       <section id="board" class="container section">
@@ -106,6 +112,18 @@
             </div>
           </aside>
         </div>
+      </section>
+
+      <section id="deploy" class="container section">
+        <h2>Deployment Checklist</h2>
+        <ul class="checklist">
+          <li>Install MySQL + PM2 + Nginx on production server</li>
+          <li>Apply <code>sql/schema.sql</code> to MySQL database</li>
+          <li>Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code></li>
+          <li>Run app on port 3000 via PM2 (<code>ecosystem.config.cjs</code>)</li>
+          <li>Reverse proxy <code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code></li>
+          <li>Enable HTTPS certificate and verify CRUD + API docs</li>
+        </ul>
       </section>
 
       <section id="contact" class="container section">

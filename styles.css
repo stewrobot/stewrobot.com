@@ -79,6 +79,35 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   background: rgba(48, 39, 21, 0.55);
 }
 
+.live-slot {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px dashed #34507f;
+  border-radius: 12px;
+  background: rgba(16, 27, 51, 0.55);
+}
+
+.live-slot .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #97aee3;
+  margin-bottom: 4px;
+}
+
+.chip {
+  font-size: 0.75rem;
+  border: 1px solid #4869a8;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  color: #b8cbf3;
+}
+
+.hint {
+  font-size: 0.9rem;
+}
+
 .board-head {
   display: flex;
   justify-content: space-between;
@@ -160,6 +189,20 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 4px 10px;
+}
+
+.checklist {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.checklist code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
 }
 
 .footer {
