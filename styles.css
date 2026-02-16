@@ -52,6 +52,11 @@ body {
   color: transparent;
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+}
+
 .topbar nav a {
   color: var(--muted); text-decoration: none; margin-left: 16px; font-size: 0.95rem;
 }
@@ -59,6 +64,29 @@ body {
 
 .topbar .brand:hover .brand-word {
   filter: brightness(1.12);
+}
+
+.lang-switch {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 14px;
+}
+
+.lang-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  color: #0b1222;
+  background: #9fb6ff;
+  border-color: transparent;
+  font-weight: 700;
 }
 
 .hero { padding: 88px 0 44px; }
@@ -81,7 +109,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   border-color: transparent;
 }
 
-.section { padding: 38px 0; }
+.section { padding: 38px 0; scroll-margin-top: 84px; }
 .section h2 { margin: 0 0 10px; }
 .section p { color: var(--muted); }
 
