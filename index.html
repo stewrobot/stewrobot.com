@@ -108,6 +108,23 @@
         </div>
         <p class="board-note" data-i18n="board_note">Live board deployment is complete. This preview shows the intended interaction style.</p>
 
+        <div class="board-shell">
+          <div class="board-tabs">
+            <button class="board-tab-btn active" data-board-view="home" data-i18n="board_tab_home">Board Home</button>
+            <button class="board-tab-btn" data-board-view="write" data-i18n="board_tab_write">Write</button>
+            <button class="board-tab-btn" data-board-view="docs" data-i18n="board_tab_docs">API Docs</button>
+            <button class="board-tab-btn" data-board-view="full" data-i18n="board_tab_full">Open Full</button>
+          </div>
+          <iframe
+            id="boardFrame"
+            class="board-frame"
+            title="stewrobot live board"
+            src="https://board.stewrobot.com"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          ></iframe>
+        </div>
+
         <div class="board-layout">
           <div class="board-feed">
             <article class="post-card">
@@ -194,6 +211,7 @@
           live_label: '라이브 보드 URL', live_chip: '온라인', live_hint: '커뮤니티 보드는 HTTPS로 운영 중입니다.',
           board_title: '커뮤니티 보드 (미리보기)', board_source: '보드 소스 ↗',
           board_note: '라이브 보드 배포가 완료되었습니다. 아래는 목표 상호작용 스타일 미리보기입니다.',
+          board_tab_home: '보드 홈', board_tab_write: '글쓰기', board_tab_docs: 'API 문서', board_tab_full: '전체 열기',
           post1_title: '[공지] stewrobot 로드맵 v0.1', post1_body: '모바일 베타 일정과 웹 기능 우선순위를 공유합니다. 댓글로 피드백 남겨주세요.', post1_meta: 'admin · 22:31 · 댓글 4',
           post2_title: '첫 사용자 테스트 참여자 모집', post2_body: 'iOS/Android 클로즈드 베타 예정. 참여 희망자는 보드에서 알려주세요.', post2_meta: 'team · 21:52 · 댓글 2',
           post3_title: 'Q&A: 도메인 + HTTPS 타임라인', post3_body: 'DNS 전파/인증서 발급 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.', post3_meta: 'stewrobot · 20:07 · 댓글 7',
@@ -225,6 +243,7 @@
           live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
           board_title: 'Community Board (Preview)', board_source: 'Board source ↗',
           board_note: 'Live board deployment is complete. This preview shows the intended interaction style.',
+          board_tab_home: 'Board Home', board_tab_write: 'Write', board_tab_docs: 'API Docs', board_tab_full: 'Open Full',
           post1_title: '[Notice] stewrobot roadmap v0.1', post1_body: 'Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.', post1_meta: 'admin · 22:31 · comments 4',
           post2_title: 'Looking for first user test participants', post2_body: 'Closed beta is planned for iOS and Android. Reach out on the board if you want to join.', post2_meta: 'team · 21:52 · comments 2',
           post3_title: 'Q&A: Domain + HTTPS timeline', post3_body: 'We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.', post3_meta: 'stewrobot · 20:07 · comments 7',
@@ -256,6 +275,7 @@
           live_label: 'ライブボードURL', live_chip: 'online', live_hint: 'コミュニティボードはHTTPSで稼働中です。',
           board_title: 'コミュニティ掲示板（プレビュー）', board_source: 'ボードソース ↗',
           board_note: 'ライブ配備は完了しています。以下は想定UIスタイルのプレビューです。',
+          board_tab_home: 'ボードホーム', board_tab_write: '投稿', board_tab_docs: 'APIドキュメント', board_tab_full: '全画面で開く',
           post1_title: '[お知らせ] stewrobot ロードマップ v0.1', post1_body: 'モバイルベータ日程とWeb機能の優先順位を共有します。コメントでフィードバックをお願いします。', post1_meta: 'admin · 22:31 · コメント 4',
           post2_title: '最初のユーザーテスト参加者を募集', post2_body: 'iOS/Android向けクローズドベータを予定。参加希望は掲示板で知らせてください。', post2_meta: 'team · 21:52 · コメント 2',
           post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
@@ -366,6 +386,26 @@
         btn.addEventListener('click', () => {
           applyTheme(btn.dataset.theme);
           closeThemeMenu();
+        });
+      });
+
+
+      const boardFrame = document.getElementById('boardFrame');
+      const boardViewMap = {
+        home: 'https://board.stewrobot.com/',
+        write: 'https://board.stewrobot.com/posts/new',
+        docs: 'https://board.stewrobot.com/api-docs',
+      };
+
+      document.querySelectorAll('.board-tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const view = btn.dataset.boardView;
+          if (view === 'full') {
+            window.location.href = 'https://board.stewrobot.com';
+            return;
+          }
+          boardFrame.src = boardViewMap[view] || boardViewMap.home;
+          document.querySelectorAll('.board-tab-btn').forEach((b) => b.classList.toggle('active', b === btn));
         });
       });
 

@@ -292,6 +292,46 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   font-size: 0.92rem;
 }
 
+.board-shell {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--panel-soft);
+  margin-bottom: 14px;
+}
+
+.board-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.board-tab-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  border-radius: 9px;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.board-tab-btn.active {
+  color: #0b1222;
+  background: #9fb6ff;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.board-frame {
+  width: 100%;
+  height: min(68vh, 640px);
+  border: 0;
+  background: #0d1324;
+}
+
 .board-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -397,6 +437,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
 @media (max-width: 860px) {
   .topbar nav { display: none; }
   .board-layout { grid-template-columns: 1fr; }
+  .board-frame { height: 58vh; }
 }
 
 
@@ -494,4 +535,19 @@ body[data-theme="atelier"] .live-slot a:hover,
 body[data-theme="atelier"] .text-link:hover {
   color: #20160f;
   border-bottom-color: #7d5a3a;
+}
+
+
+body[data-theme="atelier"] .board-shell {
+  background: rgba(255, 247, 237, 0.92);
+}
+
+body[data-theme="atelier"] .board-tab-btn {
+  color: #5f5247;
+  background: rgba(122, 93, 63, 0.08);
+}
+
+body[data-theme="atelier"] .board-tab-btn.active {
+  background: #c87e42;
+  color: #fff8f2;
 }
