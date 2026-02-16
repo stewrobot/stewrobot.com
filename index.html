@@ -283,7 +283,6 @@
         });
 
         document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));
-        localStorage.setItem('stewrobot_lang', lang);
       }
 
       langToggle.addEventListener('click', () => {
@@ -302,8 +301,7 @@
         });
       });
 
-      const savedLang = localStorage.getItem('stewrobot_lang');
-      if (savedLang && i18n[savedLang]) applyLang(savedLang);
+      applyLang('en');
     </script>
   </body>
 </html>
