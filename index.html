@@ -166,7 +166,7 @@
         </div>
       </section>
 
-      <section id="deploy" class="container section page-section" data-page="deploy">
+      <section id="deploy" class="container section home-section">
         <h2 data-i18n="deploy_title">Deployment Checklist</h2>
         <ul class="checklist">
           <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
@@ -410,15 +410,14 @@
       });
 
       function setMainView(viewName) {
-        const homeMode = viewName === 'overview' || viewName === 'progress';
+        const homeMode = viewName === 'overview' || viewName === 'progress' || viewName === 'deploy';
 
         document.querySelectorAll('.home-section').forEach((el) => {
           el.style.display = homeMode ? '' : 'none';
         });
 
         document.querySelectorAll('.page-section').forEach((el) => {
-          const show = (viewName === 'community' && el.dataset.page === 'community')
-            || (viewName === 'deploy' && el.dataset.page === 'deploy');
+          const show = (viewName === 'community' && el.dataset.page === 'community');
           el.style.display = show ? '' : 'none';
         });
 
@@ -430,6 +429,8 @@
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else if (viewName === 'progress') {
           document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (viewName === 'deploy') {
+          document.getElementById('deploy')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
