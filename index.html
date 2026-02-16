@@ -158,7 +158,7 @@
           <section class="community-panel hidden" id="communityDetailPanel">
             <h3 id="communityDetailTitle">Post detail</h3>
             <p class="muted small" id="communityDetailMeta"></p>
-            <p id="communityDetailContent"></p>
+            <div id="communityDetailContent" class="detail-content"></div>
             <hr class="sep" />
             <h4 data-i18n="comments_title">Comments</h4>
             <div id="communityDetailComments" class="comment-mini-list"></div>
@@ -173,11 +173,12 @@
                   <th data-i18n="board_col_title">Title</th>
                   <th style="width:140px" data-i18n="board_col_author">Author</th>
                   <th style="width:210px" data-i18n="board_col_created">Created</th>
+                  <th style="width:90px" data-i18n="board_col_views">Views</th>
                   <th style="width:90px" data-i18n="board_col_comments">Comments</th>
                 </tr>
               </thead>
               <tbody id="communityPostsBody">
-                <tr><td colspan="5" data-i18n="board_loading">Loading posts...</td></tr>
+                <tr><td colspan="6" data-i18n="board_loading">Loading posts...</td></tr>
               </tbody>
             </table>
           </div>
@@ -263,7 +264,7 @@
           live_label: '라이브 보드 URL', live_chip: '온라인', live_hint: '커뮤니티 보드는 HTTPS로 운영 중입니다.',
           board_title: '📋 보드', board_api_link: 'API 문서 보기', board_open_full: '커뮤니티 보드 열기 ↗',
           board_note: '아래에는 라이브 커뮤니티 게시판의 최신 글이 일반적인 게시판 형식으로 표시됩니다.',
-          board_tab_home: '📋 목록', board_tab_write: '✏️ 글쓰기', board_tab_docs: 'API 문서', board_total_label: '전체', board_col_id: '번호', board_col_title: '제목', board_col_author: '작성자', board_col_created: '작성일', board_col_comments: '댓글', board_loading: '게시글 불러오는 중...', board_empty: '게시글이 없습니다.', back_to_list: '목록으로', comments_title: '댓글', write_cancel: '취소', write_submit: '등록', field_content: '내용', field_title: '제목', field_password: '비밀번호', field_author: '작성자', write_title: '✏️ 글쓰기',
+          board_tab_home: '📋 목록', board_tab_write: '✏️ 글쓰기', board_tab_docs: 'API 문서', board_total_label: '전체', board_col_id: '번호', board_col_title: '제목', board_col_author: '작성자', board_col_created: '작성일', board_col_views: '조회', board_col_comments: '댓글', board_loading: '게시글 불러오는 중...', board_empty: '게시글이 없습니다.', back_to_list: '목록으로', comments_title: '댓글', write_cancel: '취소', write_submit: '등록', field_content: '내용', field_title: '제목', field_password: '비밀번호', field_author: '작성자', write_title: '✏️ 글쓰기',
           post1_title: '[공지] stewrobot 로드맵 v0.1', post1_body: '모바일 베타 일정과 웹 기능 우선순위를 공유합니다. 댓글로 피드백 남겨주세요.', post1_meta: 'admin · 22:31 · 댓글 4',
           post2_title: '첫 사용자 테스트 참여자 모집', post2_body: 'iOS/Android 클로즈드 베타 예정. 참여 희망자는 보드에서 알려주세요.', post2_meta: 'team · 21:52 · 댓글 2',
           post3_title: 'Q&A: 도메인 + HTTPS 타임라인', post3_body: 'DNS 전파/인증서 발급 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.', post3_meta: 'stewrobot · 20:07 · 댓글 7',
@@ -321,7 +322,7 @@
           live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
           board_title: '📋 Board', board_api_link: 'API docs', board_open_full: 'Open community board ↗',
           board_note: 'A conventional board-style view is shown below with live posts from the community service.',
-          board_tab_home: '📋 List', board_tab_write: '✏️ Write', board_tab_docs: 'API Docs', board_total_label: 'Total', board_col_id: 'No.', board_col_title: 'Title', board_col_author: 'Author', board_col_created: 'Created', board_col_comments: 'Comments', board_loading: 'Loading posts...', board_empty: 'No posts yet.', back_to_list: 'Back to list', comments_title: 'Comments', write_cancel: 'Cancel', write_submit: 'Post', field_content: 'Content', field_title: 'Title', field_password: 'Password', field_author: 'Author', write_title: '✏️ Write a post',
+          board_tab_home: '📋 List', board_tab_write: '✏️ Write', board_tab_docs: 'API Docs', board_total_label: 'Total', board_col_id: 'No.', board_col_title: 'Title', board_col_author: 'Author', board_col_created: 'Created', board_col_views: 'Views', board_col_comments: 'Comments', board_loading: 'Loading posts...', board_empty: 'No posts yet.', back_to_list: 'Back to list', comments_title: 'Comments', write_cancel: 'Cancel', write_submit: 'Post', field_content: 'Content', field_title: 'Title', field_password: 'Password', field_author: 'Author', write_title: '✏️ Write a post',
           post1_title: '[Notice] stewrobot roadmap v0.1', post1_body: 'Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.', post1_meta: 'admin · 22:31 · comments 4',
           post2_title: 'Looking for first user test participants', post2_body: 'Closed beta is planned for iOS and Android. Reach out on the board if you want to join.', post2_meta: 'team · 21:52 · comments 2',
           post3_title: 'Q&A: Domain + HTTPS timeline', post3_body: 'We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.', post3_meta: 'stewrobot · 20:07 · comments 7',
@@ -360,7 +361,7 @@
           live_label: 'ライブボードURL', live_chip: 'online', live_hint: 'コミュニティボードはHTTPSで稼働中です。',
           board_title: '📋 掲示板', board_api_link: 'API ドキュメント', board_open_full: 'コミュニティボードを開く ↗',
           board_note: '以下にコミュニティ掲示板の最新投稿を一般的な掲示板レイアウトで表示します。',
-          board_tab_home: '📋 一覧', board_tab_write: '✏️ 投稿', board_tab_docs: 'APIドキュメント', board_total_label: '全体', board_col_id: '番号', board_col_title: 'タイトル', board_col_author: '作成者', board_col_created: '作成日時', board_col_comments: 'コメント', board_loading: '読み込み中...', board_empty: '投稿がありません。', back_to_list: '一覧へ', comments_title: 'コメント', write_cancel: 'キャンセル', write_submit: '登録', field_content: '内容', field_title: 'タイトル', field_password: 'パスワード', field_author: '作成者', write_title: '✏️ 投稿',
+          board_tab_home: '📋 一覧', board_tab_write: '✏️ 投稿', board_tab_docs: 'APIドキュメント', board_total_label: '全体', board_col_id: '番号', board_col_title: 'タイトル', board_col_author: '作成者', board_col_created: '作成日時', board_col_views: '閲覧', board_col_comments: 'コメント', board_loading: '読み込み中...', board_empty: '投稿がありません。', back_to_list: '一覧へ', comments_title: 'コメント', write_cancel: 'キャンセル', write_submit: '登録', field_content: '内容', field_title: 'タイトル', field_password: 'パスワード', field_author: '作成者', write_title: '✏️ 投稿',
           post1_title: '[お知らせ] stewrobot ロードマップ v0.1', post1_body: 'モバイルベータ日程とWeb機能の優先順位を共有します。コメントでフィードバックをお願いします。', post1_meta: 'admin · 22:31 · コメント 4',
           post2_title: '最初のユーザーテスト参加者を募集', post2_body: 'iOS/Android向けクローズドベータを予定。参加希望は掲示板で知らせてください。', post2_meta: 'team · 21:52 · コメント 2',
           post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
@@ -519,6 +520,21 @@ function setMainView(viewName) {
         });
       });
 
+      function getViewMap() {
+        try { return JSON.parse(localStorage.getItem('stewrobot_post_views') || '{}'); } catch (_e) { return {}; }
+      }
+      function getPostViews(postId) {
+        const m = getViewMap();
+        return Number(m[String(postId)] || 0);
+      }
+      function bumpPostViews(postId) {
+        const m = getViewMap();
+        const k = String(postId);
+        m[k] = Number(m[k] || 0) + 1;
+        localStorage.setItem('stewrobot_post_views', JSON.stringify(m));
+        return m[k];
+      }
+
       async function loadCommunityPosts() {
         const tbody = document.getElementById('communityPostsBody');
         const countEl = document.getElementById('communityCount');
@@ -531,7 +547,7 @@ function setMainView(viewName) {
           const list = Array.isArray(posts) ? posts.slice(0, PAGE_SIZE) : [];
           if (countEl) countEl.textContent = String(Array.isArray(posts) ? posts.length : list.length);
           if (!list.length) {
-            tbody.innerHTML = `<tr><td colspan="5">${(i18n[document.documentElement.lang]||i18n.en).board_empty || 'No posts yet.'}</td></tr>`;
+            tbody.innerHTML = `<tr><td colspan="6">${(i18n[document.documentElement.lang]||i18n.en).board_empty || 'No posts yet.'}</td></tr>`;
             return;
           }
 
@@ -556,6 +572,7 @@ function setMainView(viewName) {
               <td><a class="row-link" href="#" data-post-id="${p.id}">${title}</a></td>
               <td>${p.author || 'anonymous'}</td>
               <td>${ds}</td>
+              <td><span class="comment-badge">${getPostViews(p.id)}</span></td>
               <td><span class="comment-badge">${p.commentsCount || 0}</span></td>
             </tr>`;
           }).join('');
@@ -568,7 +585,7 @@ function setMainView(viewName) {
           });
         } catch (_e) {
           if (countEl) countEl.textContent = '-';
-          tbody.innerHTML = `<tr><td colspan="5">Unable to load embedded list. Use Open community board.</td></tr>`;
+          tbody.innerHTML = `<tr><td colspan="6">Unable to load embedded list. Use Open community board.</td></tr>`;
         }
       }
 
@@ -610,7 +627,8 @@ function setMainView(viewName) {
         if (!r.ok) return;
         const post = await r.json();
         document.getElementById('communityDetailTitle').textContent = post.title || 'Untitled';
-        document.getElementById('communityDetailMeta').textContent = `${post.author || 'anonymous'} · ${new Date(post.createdAt || Date.now()).toLocaleString()}`;
+        const views = bumpPostViews(post.id);
+        document.getElementById('communityDetailMeta').textContent = `${post.author || 'anonymous'} · ${new Date(post.createdAt || Date.now()).toLocaleString()} · views ${views}`;
         document.getElementById('communityDetailContent').textContent = post.content || '';
         const comments = Array.isArray(post.comments) ? post.comments : [];
         const cEl = document.getElementById('communityDetailComments');
@@ -649,6 +667,8 @@ function setMainView(viewName) {
           }
           e.currentTarget.reset();
           showCommunityList();
+          const tbody = document.getElementById('communityPostsBody');
+          if (tbody) tbody.innerHTML = '<tr><td colspan="6">Posted. Refreshing list...</td></tr>';
           await loadCommunityPosts();
         } finally {
           writeSubmitting = false;
