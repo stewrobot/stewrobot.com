@@ -21,6 +21,7 @@
           <nav class="main-nav" id="mainNav">
             <a href="#" class="nav-link active" data-view="overview" data-i18n="nav_about">Overview</a>
             <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
+            <a href="#" class="nav-link" data-view="labs" data-i18n="nav_labs">Labs</a>
             <a href="#" class="nav-link" data-view="deploy" data-i18n="nav_deploy">Deploy</a>
             <a href="#" class="nav-link community-link" data-view="community" data-i18n="nav_contact">Community</a>
           </nav>
@@ -177,6 +178,29 @@
         </div>
       </section>
 
+
+      <section id="labs" class="container section home-section">
+        <h2 data-i18n="labs_title">Labs</h2>
+        <p data-i18n="labs_intro">Experimental products, automation tools, and side builds that may evolve into full services.</p>
+        <div class="cards">
+          <article class="card">
+            <h3 data-i18n="labs_1_title">Community Board Engine</h3>
+            <p data-i18n="labs_1_text">Live service for discussions, lightweight moderation, and rapid product feedback loops.</p>
+            <p class="small muted" data-i18n="labs_1_meta">status: live · type: platform</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="labs_2_title">Agent Workflow Runner</h3>
+            <p data-i18n="labs_2_text">Task automation patterns for assistant-driven operations and repeatable execution flows.</p>
+            <p class="small muted" data-i18n="labs_2_meta">status: in progress · type: solution</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="labs_3_title">Mobile Companion Experiments</h3>
+            <p data-i18n="labs_3_text">Early product concepts for mobile-first utility experiences connected to the stewrobot ecosystem.</p>
+            <p class="small muted" data-i18n="labs_3_meta">status: planned · type: app</p>
+          </article>
+        </div>
+      </section>
+
       <section id="deploy" class="container section home-section">
         <h2 data-i18n="deploy_title">Deploy</h2>
         <p class="deploy-intro" data-i18n="deploy_intro">Deployment checklist and operations baseline for reliable service delivery.</p>
@@ -220,7 +244,7 @@
 
       const i18n = {
         ko: {
-          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티', nav_deploy: '배포',
+          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티', nav_labs: '랩스', nav_deploy: '배포',
           lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: '보드 중심 런칭, 진행 중.',
@@ -255,7 +279,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         en: {
-          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community', nav_deploy: 'Deploy',
+          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community', nav_labs: 'Labs', nav_deploy: 'Deploy',
           lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
@@ -275,6 +299,22 @@
           milestone_3: 'Board CRUD, comments, password protection, and IP capture completed.',
           milestone_4: 'Monorepo structure launched for web, mobile, backend, and shared packages.',
           milestone_5: 'Organization + social branding + domain pipeline established.',
+          labs_title: '랩스',
+          labs_intro: '앱, 솔루션, 자동화 실험 등 향후 서비스로 발전할 수 있는 프로젝트 공간입니다.',
+          labs_1_title: '커뮤니티 보드 엔진', labs_1_text: '토론/피드백 루프를 위한 라이브 서비스.', labs_1_meta: 'status: live · type: platform',
+          labs_2_title: '에이전트 워크플로우 러너', labs_2_text: '반복 가능한 자동화 실행 흐름 실험.', labs_2_meta: 'status: in progress · type: solution',
+          labs_3_title: '모바일 컴패니언 실험', labs_3_text: '생태계 연동 모바일 유틸리티 컨셉.', labs_3_meta: 'status: planned · type: app',
+          labs_title: 'Labs',
+          labs_intro: 'Experimental products, automation tools, and side builds that may evolve into full services.',
+          labs_1_title: 'Community Board Engine',
+          labs_1_text: 'Live service for discussions, lightweight moderation, and rapid product feedback loops.',
+          labs_1_meta: 'status: live · type: platform',
+          labs_2_title: 'Agent Workflow Runner',
+          labs_2_text: 'Task automation patterns for assistant-driven operations and repeatable execution flows.',
+          labs_2_meta: 'status: in progress · type: solution',
+          labs_3_title: 'Mobile Companion Experiments',
+          labs_3_text: 'Early product concepts for mobile-first utility experiences connected to the stewrobot ecosystem.',
+          labs_3_meta: 'status: planned · type: app',
 
           live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
           board_title: 'Community Hub', board_source: 'Board source ↗',
@@ -301,7 +341,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         ja: {
-          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ', nav_deploy: 'デプロイ',
+          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ', nav_labs: 'ラボ', nav_deploy: 'デプロイ',
           lang_full: '完了', lang_partial: '一部',
           eyebrow: '♾️ コズミックAIビルダー',
           hero_title: 'ボード中心のローンチ、進行中。',
@@ -324,6 +364,11 @@
           post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
           side_write_title: '投稿する', side_write_text: '実際の投稿はライブ掲示板で可能です。', side_write_btn: '新規投稿',
           side_tags_title: '人気タグ', tag1: '#お知らせ', tag2: '#開発ログ', tag3: '#QnA', tag4: '#フィードバック',
+          labs_title: 'ラボ',
+          labs_intro: 'アプリ、ソリューション、自動化実験など、将来サービス化できるプロジェクト領域です。',
+          labs_1_title: 'コミュニティボードエンジン', labs_1_text: '議論とフィードバックループのためのライブサービス。', labs_1_meta: 'status: live · type: platform',
+          labs_2_title: 'エージェントワークフローランナー', labs_2_text: '再現可能な自動化実行フローの実験。', labs_2_meta: 'status: in progress · type: solution',
+          labs_3_title: 'モバイルコンパニオン実験', labs_3_text: 'エコシステム連携のモバイルユーティリティ構想。', labs_3_meta: 'status: planned · type: app',
           deploy_title: 'デプロイ',
           deploy_intro: '安定運用のためのデプロイチェックリストと運用基準です。',
           deploy_1: '本番サーバーに MySQL + PM2 + Nginx をインストール',
@@ -454,7 +499,7 @@
       });
 
       function setMainView(viewName) {
-        const homeMode = viewName === 'overview' || viewName === 'progress' || viewName === 'deploy';
+        const homeMode = viewName === 'overview' || viewName === 'progress' || viewName === 'labs' || viewName === 'deploy';
 
         document.querySelectorAll('.home-section').forEach((el) => {
           el.style.display = homeMode ? '' : 'none';
@@ -473,6 +518,8 @@
           document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'progress') {
           document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (viewName === 'labs') {
+          document.getElementById('labs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'deploy') {
           document.getElementById('deploy')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
