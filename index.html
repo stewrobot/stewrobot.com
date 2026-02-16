@@ -768,9 +768,13 @@
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
 
-      const initialView = new URLSearchParams(window.location.search).get('view');
+      const qs = new URLSearchParams(window.location.search);
+      const initialView = qs.get('view');
       if (initialView && ['home','overview','progress','labs','deploy','community'].includes(initialView)) {
         setMainView(initialView);
+      } else if (qs.get('back') === '1') {
+        setMainView('labs');
+        history.replaceState(null, '', '/');
       } else if (window.location.hash === '#labs') {
         setMainView('labs');
         history.replaceState(null, '', '/');
