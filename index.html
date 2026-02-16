@@ -1095,10 +1095,7 @@
           setMainView('labs');
         }, 40);
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
-          el.classList.toggle('active', el.dataset.view === 'home');
-        });
+        setMainView('community');
       }
     </script>
   </body>
