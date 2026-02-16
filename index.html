@@ -27,9 +27,9 @@
           <div class="lang-switch" aria-label="Language switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">🌐</button>
             <div class="lang-menu" id="langMenu" role="menu" aria-hidden="true">
-              <button class="lang-btn" data-lang="ko" role="menuitem">한국어</button>
-              <button class="lang-btn active" data-lang="en" role="menuitem">English</button>
-              <button class="lang-btn" data-lang="ja" role="menuitem">日本語</button>
+              <button class="lang-btn" data-lang="ko" role="menuitem">한국어 <span class="lang-state" data-i18n="lang_partial">partial</span></button>
+              <button class="lang-btn active" data-lang="en" role="menuitem">English <span class="lang-state full" data-i18n="lang_full">full</span></button>
+              <button class="lang-btn" data-lang="ja" role="menuitem">日本語 <span class="lang-state" data-i18n="lang_partial">partial</span></button>
             </div>
           </div>
         </div>
@@ -164,6 +164,7 @@
       const i18n = {
         ko: {
           nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티',
+          lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: '보드 중심 런칭, 진행 중.',
           hero_lead: 'stewrobot은 커뮤니티 보드를 중심으로 실용적인 AI 제품을 만듭니다. 더 빠른 피드백, 더 빠른 출시.',
@@ -194,6 +195,7 @@
         },
         en: {
           nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community',
+          lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
           hero_lead: 'stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.',
@@ -224,6 +226,7 @@
         },
         ja: {
           nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ',
+          lang_full: '完了', lang_partial: '一部',
           eyebrow: '♾️ コズミックAIビルダー',
           hero_title: 'ボード中心のローンチ、進行中。',
           hero_lead: 'stewrobotはコミュニティボードを中心に、実用的なAIプロダクトを構築しています。より速いフィードバック、より速いリリース。',
@@ -274,12 +277,14 @@
 
         document.querySelectorAll('[data-i18n]').forEach((el) => {
           const key = el.getAttribute('data-i18n');
-          if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+          const val = (i18n[lang] && i18n[lang][key]) || (i18n.en && i18n.en[key]);
+          if (val) el.textContent = val;
         });
 
         document.querySelectorAll('[data-i18n-html]').forEach((el) => {
           const key = el.getAttribute('data-i18n-html');
-          if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key];
+          const val = (i18n[lang] && i18n[lang][key]) || (i18n.en && i18n.en[key]);
+          if (val) el.innerHTML = val;
         });
 
         document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));

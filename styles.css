@@ -122,6 +122,20 @@ body {
   font-weight: 700;
 }
 
+.lang-state {
+  margin-left: 6px;
+  font-size: 0.66rem;
+  border: 1px solid #4a5c83;
+  border-radius: 999px;
+  padding: 1px 6px;
+  color: #98add9;
+}
+
+.lang-state.full {
+  border-color: #3d8c69;
+  color: #b9f5db;
+}
+
 .hero { padding: 88px 0 44px; }
 .eyebrow { color: var(--accent-2); margin: 0 0 8px; font-weight: 700; }
 h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
