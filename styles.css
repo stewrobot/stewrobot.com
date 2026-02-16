@@ -146,11 +146,11 @@ body {
   position: absolute;
   right: 0;
   top: calc(100% + 8px);
-  width: min(340px, 92vw);
+  width: min(440px, 96vw);
   background: rgba(9, 14, 24, 0.96);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 6px;
+  padding: 8px;
   display: none;
   z-index: 10;
 }
@@ -166,14 +166,15 @@ body {
   background: transparent;
   color: var(--muted);
   border-radius: 8px;
-  padding: 6px 8px;
+  padding: 7px 10px;
   font-size: 0.8rem;
   text-align: left;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 6px;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .lang-btn:hover {
@@ -190,16 +191,20 @@ body {
 
 .lang-state {
   margin-left: 6px;
-  font-size: 0.66rem;
+  font-size: 0.64rem;
   border: 1px solid #4a5c83;
   border-radius: 999px;
-  padding: 1px 6px;
+  padding: 2px 7px;
   color: #98add9;
+  background: rgba(74, 92, 131, 0.16);
+  font-weight: 700;
+  line-height: 1;
 }
 
 .lang-state.full {
   border-color: #3d8c69;
   color: #b9f5db;
+  background: rgba(61, 140, 105, 0.22);
 }
 
 .hero { padding: 88px 0 44px; }
