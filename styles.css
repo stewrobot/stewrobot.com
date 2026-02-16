@@ -65,6 +65,12 @@ body {
 }
 .topbar nav a:hover { color: var(--text); }
 
+.topbar nav a.active {
+  color: var(--text);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+}
+
 .topbar .brand:hover .brand-word {
   filter: brightness(1.12);
 }
@@ -212,6 +218,9 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   background: linear-gradient(135deg, var(--accent), #5d7cff);
   border-color: transparent;
 }
+
+.app-view { display: none; }
+.app-view.active-view { display: block; }
 
 .section { padding: 38px 0; scroll-margin-top: 84px; }
 .section h2 { margin: 0 0 10px; }

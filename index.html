@@ -18,11 +18,11 @@
           <span class="brand-word">stewrobot</span>
         </a>
         <div class="top-actions">
-          <nav>
-            <a href="#about" data-i18n="nav_about">Overview</a>
-            <a href="#status" data-i18n="nav_status">Progress</a>
-            <a href="#board" data-i18n="nav_board">Board</a>
-            <a href="#contact" data-i18n="nav_contact">Community</a>
+          <nav class="main-nav" id="mainNav">
+            <a href="#" class="nav-link active" data-view="overview" data-i18n="nav_about">Overview</a>
+            <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
+            <a href="#" class="nav-link" data-view="community" data-i18n="nav_contact">Community</a>
+            <a href="#" class="nav-link" data-view="deploy" data-i18n="nav_deploy">Deploy</a>
           </nav>
 
           <div class="theme-switch" aria-label="Theme switcher">
@@ -53,7 +53,7 @@
     </header>
 
     <main>
-      <section id="top" class="hero container">
+      <section id="top" class="hero container app-view" data-view="overview">
         <p class="eyebrow" data-i18n="eyebrow">♾️ Cosmic AI Builder</p>
         <h1 data-i18n="hero_title">Board-first launch in motion.</h1>
         <p class="lead" data-i18n="hero_lead">
@@ -67,14 +67,14 @@
         </div>
       </section>
 
-      <section id="about" class="container section">
+      <section id="about" class="container section app-view" data-view="overview">
         <h2 data-i18n="about_title">Overview</h2>
         <p data-i18n="about_text">
           We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.
         </p>
       </section>
 
-      <section id="status" class="container section">
+      <section id="status" class="container section app-view" data-view="progress">
         <h2 data-i18n="status_title">Progress</h2>
         <div class="cards">
           <article class="card status done">
@@ -101,9 +101,9 @@
         </div>
       </section>
 
-      <section id="board" class="container section">
+      <section id="board" class="container section app-view" data-view="community">
         <div class="board-head">
-          <h2 data-i18n="board_title">Community Board (Preview)</h2>
+          <h2 data-i18n="board_title">Community Hub</h2>
           <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer" data-i18n="board_source">Board source ↗</a>
         </div>
         <p class="board-note" data-i18n="board_note">Live board deployment is complete. This preview shows the intended interaction style.</p>
@@ -166,7 +166,7 @@
         </div>
       </section>
 
-      <section id="deploy" class="container section">
+      <section id="deploy" class="container section app-view" data-view="deploy">
         <h2 data-i18n="deploy_title">Deployment Checklist</h2>
         <ul class="checklist">
           <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
@@ -178,7 +178,7 @@
         </ul>
       </section>
 
-      <section id="contact" class="container section">
+      <section id="contact" class="container section app-view" data-view="community">
         <h2 data-i18n="community_title">Community</h2>
         <p data-i18n="community_text">Official communication is now handled in the live board.</p>
         <p><a class="text-link" href="https://board.stewrobot.com" rel="noreferrer" data-i18n="community_link">Go to board.stewrobot.com ↗</a></p>
@@ -196,7 +196,7 @@
 
       const i18n = {
         ko: {
-          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티',
+          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티', nav_deploy: '배포',
           lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: '보드 중심 런칭, 진행 중.',
@@ -209,7 +209,7 @@
           status_2_title: '✅ 보드 서버 레포', status_2_text: 'Node.js 보드 백엔드(API/댓글/비밀번호 보호/문서) 푸시 완료.',
           status_3_title: '✅ 라이브 보드 배포', status_3_text: 'HTTPS 활성화 완료, board.stewrobot.com 접속 가능.',
           live_label: '라이브 보드 URL', live_chip: '온라인', live_hint: '커뮤니티 보드는 HTTPS로 운영 중입니다.',
-          board_title: '커뮤니티 보드 (미리보기)', board_source: '보드 소스 ↗',
+          board_title: '커뮤니티 허브', board_source: '보드 소스 ↗',
           board_note: '라이브 보드 배포가 완료되었습니다. 아래는 목표 상호작용 스타일 미리보기입니다.',
           board_tab_home: '보드 홈', board_tab_write: '글쓰기', board_tab_docs: 'API 문서', board_tab_full: '전체 열기',
           post1_title: '[공지] stewrobot 로드맵 v0.1', post1_body: '모바일 베타 일정과 웹 기능 우선순위를 공유합니다. 댓글로 피드백 남겨주세요.', post1_meta: 'admin · 22:31 · 댓글 4',
@@ -228,7 +228,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         en: {
-          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community',
+          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community', nav_deploy: 'Deploy',
           lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
@@ -241,7 +241,7 @@
           status_2_title: '✅ Board Server Repo', status_2_text: 'Node.js board backend pushed with API, comments, password protection, and docs.',
           status_3_title: '✅ Live Board Deploy', status_3_text: 'HTTPS is enabled and board service is now reachable at board.stewrobot.com.',
           live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
-          board_title: 'Community Board (Preview)', board_source: 'Board source ↗',
+          board_title: 'Community Hub', board_source: 'Board source ↗',
           board_note: 'Live board deployment is complete. This preview shows the intended interaction style.',
           board_tab_home: 'Board Home', board_tab_write: 'Write', board_tab_docs: 'API Docs', board_tab_full: 'Open Full',
           post1_title: '[Notice] stewrobot roadmap v0.1', post1_body: 'Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.', post1_meta: 'admin · 22:31 · comments 4',
@@ -260,7 +260,7 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         ja: {
-          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ',
+          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ', nav_deploy: 'デプロイ',
           lang_full: '完了', lang_partial: '一部',
           eyebrow: '♾️ コズミックAIビルダー',
           hero_title: 'ボード中心のローンチ、進行中。',
@@ -273,7 +273,7 @@
           status_2_title: '✅ ボードサーバー リポジトリ', status_2_text: 'Node.jsボードバックエンド(API/コメント/パスワード保護/ドキュメント)をプッシュ済み。',
           status_3_title: '✅ ライブボード配備', status_3_text: 'HTTPSが有効化され、board.stewrobot.com で利用可能です。',
           live_label: 'ライブボードURL', live_chip: 'online', live_hint: 'コミュニティボードはHTTPSで稼働中です。',
-          board_title: 'コミュニティ掲示板（プレビュー）', board_source: 'ボードソース ↗',
+          board_title: 'コミュニティハブ', board_source: 'ボードソース ↗',
           board_note: 'ライブ配備は完了しています。以下は想定UIスタイルのプレビューです。',
           board_tab_home: 'ボードホーム', board_tab_write: '投稿', board_tab_docs: 'APIドキュメント', board_tab_full: '全画面で開く',
           post1_title: '[お知らせ] stewrobot ロードマップ v0.1', post1_body: 'モバイルベータ日程とWeb機能の優先順位を共有します。コメントでフィードバックをお願いします。', post1_meta: 'admin · 22:31 · コメント 4',
@@ -409,11 +409,28 @@
         });
       });
 
+      function setMainView(viewName) {
+        document.querySelectorAll('.app-view').forEach((el) => {
+          el.classList.toggle('active-view', el.dataset.view === viewName);
+        });
+        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+          el.classList.toggle('active', el.dataset.view === viewName);
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          setMainView(el.dataset.view);
+        });
+      });
+
       const brandTopLink = document.getElementById('brandTopLink');
       brandTopLink.addEventListener('click', (e) => {
         e.preventDefault();
         history.replaceState(null, '', window.location.pathname + window.location.search);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setMainView('overview');
       });
 
       const savedTheme = localStorage.getItem('stewrobot_theme');
@@ -421,6 +438,8 @@
 
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
+
+      setMainView('overview');
     </script>
   </body>
 </html>
