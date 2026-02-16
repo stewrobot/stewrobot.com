@@ -780,10 +780,15 @@
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
-        el.classList.toggle('active', el.dataset.view === 'home');
-      });
+      const initialView = new URLSearchParams(window.location.search).get('view');
+      if (initialView && ['home','overview','progress','labs','deploy','community'].includes(initialView)) {
+        setMainView(initialView);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+          el.classList.toggle('active', el.dataset.view === 'home');
+        });
+      }
     </script>
   </body>
 </html>
