@@ -471,7 +471,7 @@
       document.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
           applyLang(btn.dataset.lang);
-          closeLangMenu();
+          // keep the language layer open so users can try multiple languages quickly
         });
       });
 
