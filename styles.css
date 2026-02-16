@@ -729,3 +729,17 @@ body[data-theme="atelier"] .community-board {
 body[data-theme="atelier"] .board-table tr:hover td {
   background: rgba(160, 118, 73, 0.1);
 }
+
+
+/* Keep layout stable when switching to community/deploy views */
+main {
+  min-height: calc(100vh - 150px);
+}
+
+.page-section {
+  min-height: calc(100vh - 210px);
+}
+
+.community-board {
+  min-height: 460px;
+}
