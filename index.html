@@ -462,7 +462,7 @@
 
         document.querySelectorAll('.page-section').forEach((el) => {
           const show = (viewName === 'community' && el.dataset.page === 'community');
-          el.style.display = show ? '' : 'none';
+          el.style.display = show ? 'block' : 'none';
         });
 
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
