@@ -770,7 +770,7 @@
         setMainView(initialView);
       } else if (window.location.hash === '#labs') {
         setMainView('labs');
-        history.replaceState(null, '', window.location.pathname + window.location.search);
+        history.replaceState(null, '', '/');
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
