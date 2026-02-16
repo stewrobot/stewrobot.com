@@ -1073,3 +1073,11 @@ button { cursor: pointer; }
 }
 
 .section-arrow:hover { opacity: 1; }
+
+.cta-row .btn {
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.cta-row .btn:hover {
+  transform: translateY(-2px);
+}
