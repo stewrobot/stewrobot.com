@@ -435,3 +435,16 @@ body[data-theme="atelier"] .brand-word {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+body[data-theme="atelier"] .eyebrow {
+  color: #6d46d6;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+body[data-theme="atelier"] .lead,
+body[data-theme="atelier"] .section p,
+body[data-theme="atelier"] .post-meta,
+body[data-theme="atelier"] .hint,
+body[data-theme="atelier"] .lang-state {
+  color: #5f5247;
+}
