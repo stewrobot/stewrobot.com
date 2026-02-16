@@ -642,3 +642,31 @@ body[data-theme="atelier"] .ops-visual {
     grid-template-columns: 1fr;
   }
 }
+
+
+.deploy-intro {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+.ops-note {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+#deploy {
+  margin-top: 10px;
+}
+
+#contact {
+  margin-top: 14px;
+}
+
+
+body[data-theme="atelier"] .deploy-intro,
+body[data-theme="atelier"] .ops-note {
+  color: #5f5247;
+}

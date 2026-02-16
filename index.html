@@ -70,7 +70,15 @@
       <section id="about" class="container section home-section">
         <h2 data-i18n="about_title">Overview</h2>
         <p data-i18n="about_text">
-          We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.
+          stewrobot builds practical AI products that move from concept to real usage with unusual speed.
+        </p>
+        <p data-i18n="about_text_2">
+          We focus on product clarity first: clear problem framing, fast prototypes, and tight feedback loops with real users through the community board.
+          The goal is not to ship demos—it is to ship tools people return to.
+        </p>
+        <p data-i18n="about_text_3">
+          Current scope spans web platform architecture, mobile-ready product foundations, and autonomous workflow systems.
+          Every release is treated like an operating system update: measurable, iterative, and publicly trackable through progress logs.
         </p>
       </section>
 
@@ -170,7 +178,8 @@
       </section>
 
       <section id="deploy" class="container section home-section">
-        <h2 data-i18n="deploy_title">Deployment Checklist</h2>
+        <h2 data-i18n="deploy_title">Deploy</h2>
+        <p class="deploy-intro" data-i18n="deploy_intro">Deployment checklist and operations baseline for reliable service delivery.</p>
         <ul class="checklist">
           <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
           <li data-i18n-html="deploy_2">Apply <code>sql/schema.sql</code> to MySQL database</li>
@@ -184,6 +193,7 @@
 
         <div class="ops-visual">
           <h3 data-i18n="ops_title">Service map</h3>
+          <p class="ops-note" data-i18n="ops_note">This map shows how the public website, live board, and data layer connect in production.</p>
           <div class="flow">
             <div>stewrobot.com<br /><span>GitHub Pages</span></div>
             <div>board.stewrobot.com<br /><span>Nginx + Node</span></div>
@@ -217,7 +227,9 @@
           hero_lead: 'stewrobot은 커뮤니티 보드를 중심으로 실용적인 AI 제품을 만듭니다. 더 빠른 피드백, 더 빠른 출시.',
           cta_github: 'GitHub', cta_liveboard: '라이브 보드 ↗',
           about_title: '개요',
-          about_text: '우리는 사람들이 실제로 쓰는 소프트웨어를 설계·프로토타이핑·출시합니다. 현재 집중 영역은 보드 경험, 모바일 앱 기반, AI 워크플로우 도구입니다.',
+          about_text: 'stewrobot은 아이디어를 빠르게 실사용 제품으로 전환하는 실용적 AI 제품을 만듭니다.',
+          about_text_2: '핵심은 문제정의의 명확성, 빠른 프로토타입, 그리고 커뮤니티 보드 기반 피드백 루프입니다. 데모가 아니라 반복 사용되는 도구를 목표로 합니다.',
+          about_text_3: '현재 범위는 웹 플랫폼 구조, 모바일 확장 기반, 자율 워크플로우 시스템입니다. 모든 릴리스는 측정 가능하고 공개적으로 추적되는 업데이트로 운영합니다.',
           status_title: '진행상황',
           status_1_title: '✅ 도메인 & 페이지', status_1_text: 'stewrobot.com이 GitHub Pages와 연결되어 라이브 상태입니다.',
           status_2_title: '✅ 보드 서버 레포', status_2_text: 'Node.js 보드 백엔드(API/댓글/비밀번호 보호/문서) 푸시 완료.',
@@ -231,7 +243,8 @@
           post3_title: 'Q&A: 도메인 + HTTPS 타임라인', post3_body: 'DNS 전파/인증서 발급 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.', post3_meta: 'stewrobot · 20:07 · 댓글 7',
           side_write_title: '글 작성', side_write_text: '실제 글쓰기는 라이브 보드에서 가능합니다.', side_write_btn: '새 글',
           side_tags_title: '인기 태그', tag1: '#공지', tag2: '#개발로그', tag3: '#QnA', tag4: '#피드백',
-          deploy_title: '배포 체크리스트',
+          deploy_title: '배포',
+          deploy_intro: '안정적인 서비스 운영을 위한 배포 체크리스트와 운영 기준입니다.',
           deploy_1: '운영 서버에 MySQL + PM2 + Nginx 설치',
           deploy_2: 'MySQL에 <code>sql/schema.sql</code> 적용',
           deploy_3: '운영 DB 값으로 <code>.env</code> 설정, <code>USE_IN_MEMORY=false</code> 확인',
@@ -249,7 +262,9 @@
           hero_lead: 'stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.',
           cta_github: 'GitHub', cta_liveboard: 'Live board ↗',
           about_title: 'Overview',
-          about_text: 'We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.',
+          about_text: 'stewrobot builds practical AI products that move from concept to real usage with unusual speed.',
+          about_text_2: 'We focus on product clarity first: clear problem framing, fast prototypes, and tight feedback loops with real users through the community board. The goal is not to ship demos—it is to ship tools people return to.',
+          about_text_3: 'Current scope spans web platform architecture, mobile-ready product foundations, and autonomous workflow systems. Every release is treated like an operating system update: measurable, iterative, and publicly trackable through progress logs.',
           status_title: 'Progress',
           status_1_title: '✅ Domain & Pages', status_1_text: 'stewrobot.com is live and connected to GitHub Pages.',
           status_2_title: '✅ Board Server Repo', status_2_text: 'Node.js board backend pushed with API, comments, password protection, and docs.',
@@ -270,7 +285,8 @@
           post3_title: 'Q&A: Domain + HTTPS timeline', post3_body: 'We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.', post3_meta: 'stewrobot · 20:07 · comments 7',
           side_write_title: 'Write a post', side_write_text: 'Posting is available in the live board.', side_write_btn: 'New Post',
           side_tags_title: 'Popular tags', tag1: '#notice', tag2: '#devlog', tag3: '#QnA', tag4: '#feedback',
-          deploy_title: 'Deployment Checklist',
+          deploy_title: 'Deploy',
+          deploy_intro: 'Deployment checklist and operations baseline for reliable service delivery.',
           deploy_1: 'Install MySQL + PM2 + Nginx on production server',
           deploy_2: 'Apply <code>sql/schema.sql</code> to MySQL database',
           deploy_3: 'Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code>',
@@ -280,6 +296,7 @@
           deploy_7: 'Set daily DB backup + 14-day retention and monthly restore drill',
           deploy_8: 'Monitor uptime, error logs, and certificate renewal status',
           ops_title: 'Service map',
+          ops_note: 'This map shows how the public website, live board, and data layer connect in production.',
           community_title: 'Community', community_text: 'Official communication is now handled in the live board.', community_link: 'Go to board.stewrobot.com ↗', embed_help: 'If the embedded board does not load, use “Open Full” to continue in the same tab.',
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
@@ -291,7 +308,9 @@
           hero_lead: 'stewrobotはコミュニティボードを中心に、実用的なAIプロダクトを構築しています。より速いフィードバック、より速いリリース。',
           cta_github: 'GitHub', cta_liveboard: 'ライブボード ↗',
           about_title: '概要',
-          about_text: '私たちは実際に使われるソフトウェアを設計・試作・公開します。現在の重点は掲示板体験、モバイル基盤、AIワークフローツールです。',
+          about_text: 'stewrobotは、構想から実運用までを高速で進める実用AIプロダクトを構築します。',
+          about_text_2: '重視するのは課題定義の明確さ、素早い試作、そしてコミュニティボードを使った高速フィードバックです。デモではなく、継続利用される道具を目指します。',
+          about_text_3: '現在の対象はWeb基盤、モバイル展開基盤、そして自律ワークフローです。すべてのリリースは測定可能で公開追跡可能な更新として運用します。',
           status_title: '進捗',
           status_1_title: '✅ ドメイン & Pages', status_1_text: 'stewrobot.com は GitHub Pages で公開中です。',
           status_2_title: '✅ ボードサーバー リポジトリ', status_2_text: 'Node.jsボードバックエンド(API/コメント/パスワード保護/ドキュメント)をプッシュ済み。',
@@ -305,7 +324,8 @@
           post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
           side_write_title: '投稿する', side_write_text: '実際の投稿はライブ掲示板で可能です。', side_write_btn: '新規投稿',
           side_tags_title: '人気タグ', tag1: '#お知らせ', tag2: '#開発ログ', tag3: '#QnA', tag4: '#フィードバック',
-          deploy_title: 'デプロイチェックリスト',
+          deploy_title: 'デプロイ',
+          deploy_intro: '安定運用のためのデプロイチェックリストと運用基準です。',
           deploy_1: '本番サーバーに MySQL + PM2 + Nginx をインストール',
           deploy_2: 'MySQL に <code>sql/schema.sql</code> を適用',
           deploy_3: '本番DB値で <code>.env</code> を設定し <code>USE_IN_MEMORY=false</code> を確認',
