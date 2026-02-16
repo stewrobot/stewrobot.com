@@ -24,6 +24,15 @@
             <a href="#board" data-i18n="nav_board">Board</a>
             <a href="#contact" data-i18n="nav_contact">Community</a>
           </nav>
+
+          <div class="theme-switch" aria-label="Theme switcher">
+            <button class="theme-toggle" id="themeToggle" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu">🎨</button>
+            <div class="theme-menu" id="themeMenu" role="menu" aria-hidden="true">
+              <button class="theme-btn active" data-theme="cosmic" role="menuitem">Cosmic</button>
+              <button class="theme-btn" data-theme="atelier" role="menuitem">Atelier</button>
+            </div>
+          </div>
+
           <div class="lang-switch" aria-label="Language switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-controls="langMenu">🌐</button>
             <div class="lang-menu" id="langMenu" role="menu" aria-hidden="true">
@@ -273,6 +282,8 @@
 
       const langToggle = document.getElementById('langToggle');
       const langMenu = document.getElementById('langMenu');
+      const themeToggle = document.getElementById('themeToggle');
+      const themeMenu = document.getElementById('themeMenu');
 
       function closeLangMenu() {
         langMenu.classList.remove('open');
@@ -284,6 +295,24 @@
         langMenu.classList.add('open');
         langToggle.setAttribute('aria-expanded', 'true');
         langMenu.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeThemeMenu() {
+        themeMenu.classList.remove('open');
+        themeToggle.setAttribute('aria-expanded', 'false');
+        themeMenu.setAttribute('aria-hidden', 'true');
+      }
+
+      function openThemeMenu() {
+        themeMenu.classList.add('open');
+        themeToggle.setAttribute('aria-expanded', 'true');
+        themeMenu.setAttribute('aria-hidden', 'false');
+      }
+
+      function applyTheme(theme) {
+        document.body.setAttribute('data-theme', theme);
+        document.querySelectorAll('.theme-btn').forEach((b) => b.classList.toggle('active', b.dataset.theme === theme));
+        localStorage.setItem('stewrobot_theme', theme);
       }
 
       function applyLang(lang) {
@@ -307,11 +336,23 @@
 
       langToggle.addEventListener('click', () => {
         if (langMenu.classList.contains('open')) closeLangMenu();
-        else openLangMenu();
+        else {
+          closeThemeMenu();
+          openLangMenu();
+        }
+      });
+
+      themeToggle.addEventListener('click', () => {
+        if (themeMenu.classList.contains('open')) closeThemeMenu();
+        else {
+          closeLangMenu();
+          openThemeMenu();
+        }
       });
 
       document.addEventListener('click', (e) => {
         if (!e.target.closest('.lang-switch')) closeLangMenu();
+        if (!e.target.closest('.theme-switch')) closeThemeMenu();
       });
 
       document.querySelectorAll('.lang-btn').forEach((btn) => {
@@ -321,12 +362,22 @@
         });
       });
 
+      document.querySelectorAll('.theme-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          applyTheme(btn.dataset.theme);
+          closeThemeMenu();
+        });
+      });
+
       const brandTopLink = document.getElementById('brandTopLink');
       brandTopLink.addEventListener('click', (e) => {
         e.preventDefault();
         history.replaceState(null, '', window.location.pathname + window.location.search);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
+      const savedTheme = localStorage.getItem('stewrobot_theme');
+      applyTheme(savedTheme || 'cosmic');
 
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
