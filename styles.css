@@ -104,6 +104,15 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   color: #b8cbf3;
 }
 
+.chip.live {
+  border-color: #3d8c69;
+  color: #b9f5db;
+}
+
+.live-slot a {
+  color: #c9d9ff;
+}
+
 .hint {
   font-size: 0.9rem;
 }
