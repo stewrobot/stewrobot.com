@@ -483,3 +483,15 @@ body[data-theme="atelier"] .lang-btn.active {
   background: #c87e42;
   color: #fff8f2;
 }
+
+body[data-theme="atelier"] .live-slot a,
+body[data-theme="atelier"] .text-link {
+  color: #3e2f22;
+  border-bottom-color: #a67a52;
+}
+
+body[data-theme="atelier"] .live-slot a:hover,
+body[data-theme="atelier"] .text-link:hover {
+  color: #20160f;
+  border-bottom-color: #7d5a3a;
+}
