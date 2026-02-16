@@ -21,8 +21,8 @@
           <nav class="main-nav" id="mainNav">
             <a href="#" class="nav-link active" data-view="overview" data-i18n="nav_about">Overview</a>
             <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
-            <a href="#" class="nav-link" data-view="community" data-i18n="nav_contact">Community</a>
             <a href="#" class="nav-link" data-view="deploy" data-i18n="nav_deploy">Deploy</a>
+            <a href="#" class="nav-link" data-view="community" data-i18n="nav_contact">Community</a>
           </nav>
 
           <div class="theme-switch" aria-label="Theme switcher">
@@ -426,7 +426,7 @@
         });
 
         if (viewName === 'overview') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'progress') {
           document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'deploy') {
@@ -447,7 +447,10 @@
       brandTopLink.addEventListener('click', (e) => {
         e.preventDefault();
         history.replaceState(null, '', window.location.pathname + window.location.search);
-        setMainView('overview');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+          el.classList.toggle('active', el.dataset.view === 'overview');
+        });
       });
 
       const savedTheme = localStorage.getItem('stewrobot_theme');
@@ -456,7 +459,10 @@
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
 
-      setMainView('overview');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+          el.classList.toggle('active', el.dataset.view === 'overview');
+        });
     </script>
   </body>
 </html>
