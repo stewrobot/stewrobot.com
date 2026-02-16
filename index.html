@@ -627,7 +627,7 @@ function setMainView(viewName) {
         loadCommunityPosts();
       });
 
-      const brandTopLinkconst brandTopLink = document.getElementById('brandTopLink');
+      const brandTopLink = document.getElementById('brandTopLink');
       brandTopLink.addEventListener('click', (e) => {
         e.preventDefault();
         history.replaceState(null, '', window.location.pathname + window.location.search);
