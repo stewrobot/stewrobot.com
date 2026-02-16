@@ -53,7 +53,7 @@
     </header>
 
     <main>
-      <section id="top" class="hero container app-view" data-view="overview">
+      <section id="top" class="hero container home-section">
         <p class="eyebrow" data-i18n="eyebrow">♾️ Cosmic AI Builder</p>
         <h1 data-i18n="hero_title">Board-first launch in motion.</h1>
         <p class="lead" data-i18n="hero_lead">
@@ -67,14 +67,14 @@
         </div>
       </section>
 
-      <section id="about" class="container section app-view" data-view="overview">
+      <section id="about" class="container section home-section">
         <h2 data-i18n="about_title">Overview</h2>
         <p data-i18n="about_text">
           We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.
         </p>
       </section>
 
-      <section id="status" class="container section app-view" data-view="progress">
+      <section id="status" class="container section home-section">
         <h2 data-i18n="status_title">Progress</h2>
         <div class="cards">
           <article class="card status done">
@@ -101,7 +101,7 @@
         </div>
       </section>
 
-      <section id="board" class="container section app-view" data-view="community">
+      <section id="board" class="container section page-section" data-page="community">
         <div class="board-head">
           <h2 data-i18n="board_title">Community Hub</h2>
           <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer" data-i18n="board_source">Board source ↗</a>
@@ -166,7 +166,7 @@
         </div>
       </section>
 
-      <section id="deploy" class="container section app-view" data-view="deploy">
+      <section id="deploy" class="container section page-section" data-page="deploy">
         <h2 data-i18n="deploy_title">Deployment Checklist</h2>
         <ul class="checklist">
           <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
@@ -178,7 +178,7 @@
         </ul>
       </section>
 
-      <section id="contact" class="container section app-view" data-view="community">
+      <section id="contact" class="container section page-section" data-page="community">
         <h2 data-i18n="community_title">Community</h2>
         <p data-i18n="community_text">Official communication is now handled in the live board.</p>
         <p><a class="text-link" href="https://board.stewrobot.com" rel="noreferrer" data-i18n="community_link">Go to board.stewrobot.com ↗</a></p>
@@ -410,13 +410,29 @@
       });
 
       function setMainView(viewName) {
-        document.querySelectorAll('.app-view').forEach((el) => {
-          el.classList.toggle('active-view', el.dataset.view === viewName);
+        const homeMode = viewName === 'overview' || viewName === 'progress';
+
+        document.querySelectorAll('.home-section').forEach((el) => {
+          el.style.display = homeMode ? '' : 'none';
         });
+
+        document.querySelectorAll('.page-section').forEach((el) => {
+          const show = (viewName === 'community' && el.dataset.page === 'community')
+            || (viewName === 'deploy' && el.dataset.page === 'deploy');
+          el.style.display = show ? '' : 'none';
+        });
+
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
           el.classList.toggle('active', el.dataset.view === viewName);
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (viewName === 'overview') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (viewName === 'progress') {
+          document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
 
       document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
