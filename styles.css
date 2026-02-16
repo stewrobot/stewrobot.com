@@ -69,6 +69,16 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
 }
 .card h3 { margin-top: 0; margin-bottom: 6px; }
 
+.status.done {
+  border-color: #2a5d52;
+  background: rgba(20, 42, 37, 0.55);
+}
+
+.status.wip {
+  border-color: #5f4e2a;
+  background: rgba(48, 39, 21, 0.55);
+}
+
 .board-head {
   display: flex;
   justify-content: space-between;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stewrobot</title>
-    <meta name="description" content="AI products, experiments, and apps by stewrobot." />
+    <meta name="description" content="Board-first AI product studio by stewrobot." />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -13,7 +13,7 @@
         <div class="brand">stewrobot</div>
         <nav>
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <a href="#status">Status</a>
           <a href="#board">Board</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -23,12 +23,13 @@
     <main>
       <section class="hero container">
         <p class="eyebrow">♾️ Cosmic AI Builder</p>
-        <h1>Build. Ship. Evolve.</h1>
+        <h1>Board-first launch in motion.</h1>
         <p class="lead">
-          We build practical AI apps and experiments for everyday life — from mobile experiences to autonomous workflows.
+          stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="https://github.com/stewrobot" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer">Board backend ↗</a>
           <a class="btn" href="https://x.com/stewrobot" target="_blank" rel="noreferrer">X</a>
           <a class="btn" href="https://instagram.com/stewrobot" target="_blank" rel="noreferrer">Instagram</a>
         </div>
@@ -37,24 +38,24 @@
       <section id="about" class="container section">
         <h2>About</h2>
         <p>
-          stewrobot is a product-focused AI studio. We design, prototype, and launch clean software that people can actually use.
+          We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.
         </p>
       </section>
 
-      <section id="projects" class="container section">
-        <h2>Now building</h2>
+      <section id="status" class="container section">
+        <h2>Launch Status</h2>
         <div class="cards">
-          <article class="card">
-            <h3>Mobile App</h3>
-            <p>Flutter-first app for iOS and Android.</p>
+          <article class="card status done">
+            <h3>✅ Domain & Pages</h3>
+            <p>stewrobot.com is live and connected to GitHub Pages.</p>
           </article>
-          <article class="card">
-            <h3>Web Platform</h3>
-            <p>Fast static-first web with scalable backend path.</p>
+          <article class="card status done">
+            <h3>✅ Board Server Repo</h3>
+            <p>Node.js board backend pushed with API, comments, password protection, and docs.</p>
           </article>
-          <article class="card">
-            <h3>AI Workflows</h3>
-            <p>Automation and assistant tooling for real tasks.</p>
+          <article class="card status wip">
+            <h3>🛠️ Live Board Deploy</h3>
+            <p>Production infra wiring (MySQL/PM2/Nginx) is next.</p>
           </article>
         </div>
       </section>
@@ -64,31 +65,25 @@
           <h2>Community Board (Preview)</h2>
           <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer">Board source ↗</a>
         </div>
-        <p class="board-note">Live board deployment is in progress. For now, you can track backend progress in the repository.</p>
+        <p class="board-note">Live board deployment is in progress. This preview reflects the target interaction model.</p>
 
         <div class="board-layout">
           <div class="board-feed">
             <article class="post-card">
               <h3>[공지] stewrobot 프로젝트 로드맵 v0.1</h3>
-              <p>
-                모바일 앱 베타 일정과 웹 기능 우선순위를 공유합니다. 피드백은 댓글로 남겨주세요.
-              </p>
+              <p>모바일 앱 베타 일정과 웹 기능 우선순위를 공유합니다. 피드백은 댓글로 남겨주세요.</p>
               <div class="post-meta">admin · 22:31 · 댓글 4</div>
             </article>
 
             <article class="post-card">
               <h3>첫 사용자 테스트 참여자 모집</h3>
-              <p>
-                iOS / Android 클로즈드 테스트를 진행합니다. 참여 희망자는 이메일로 연락 부탁드립니다.
-              </p>
+              <p>iOS / Android 클로즈드 테스트를 진행합니다. 참여 희망자는 이메일로 연락 부탁드립니다.</p>
               <div class="post-meta">team · 21:52 · 댓글 2</div>
             </article>
 
             <article class="post-card">
               <h3>Q&A: 도메인 연결 + HTTPS 적용 타임라인</h3>
-              <p>
-                DNS 전파/인증서 발급까지 걸리는 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.
-              </p>
+              <p>DNS 전파/인증서 발급까지 걸리는 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.</p>
               <div class="post-meta">plainkernel · 20:07 · 댓글 7</div>
             </article>
           </div>
