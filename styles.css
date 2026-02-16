@@ -214,6 +214,17 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   border-radius: 6px;
 }
 
+.text-link {
+  color: #c9d9ff;
+  text-decoration: none;
+  border-bottom: 1px dashed #5f79ad;
+}
+
+.text-link:hover {
+  color: #ecf2ff;
+  border-bottom-color: #9ab3e6;
+}
+
 .footer {
   margin-top: 40px;
   border-top: 1px solid var(--border);
