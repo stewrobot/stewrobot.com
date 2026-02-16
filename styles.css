@@ -76,6 +76,22 @@ body {
 }
 
 .theme-toggle,
+.lang-toggle {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 4px 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.lang-toggle:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .theme-menu {
   position: absolute;
   right: 0;
