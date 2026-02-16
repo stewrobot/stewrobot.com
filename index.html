@@ -214,21 +214,71 @@
       <section id="labs" class="container section home-section">
         <h2 data-i18n="labs_title">Labs</h2>
         <p data-i18n="labs_intro">Experimental products, automation tools, and side builds that may evolve into full services.</p>
-        <div class="cards">
-          <article class="card">
+        <div class="cards labs-cards">
+          <a class="card card-link" href="#lab-board-engine">
             <h3 data-i18n="labs_1_title">Community Board Engine</h3>
             <p data-i18n="labs_1_text">Live service for discussions, lightweight moderation, and rapid product feedback loops.</p>
             <p class="small muted" data-i18n="labs_1_meta">status: live · type: platform</p>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card card-link" href="#lab-workflow-runner">
             <h3 data-i18n="labs_2_title">Agent Workflow Runner</h3>
             <p data-i18n="labs_2_text">Task automation patterns for assistant-driven operations and repeatable execution flows.</p>
             <p class="small muted" data-i18n="labs_2_meta">status: in progress · type: solution</p>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card card-link" href="#lab-mobile-companion">
             <h3 data-i18n="labs_3_title">Mobile Companion Experiments</h3>
             <p data-i18n="labs_3_text">Early product concepts for mobile-first utility experiences connected to the stewrobot ecosystem.</p>
             <p class="small muted" data-i18n="labs_3_meta">status: planned · type: app</p>
+          </a>
+        </div>
+
+        <div class="labs-details">
+          <article id="lab-board-engine" class="lab-detail card">
+            <h3>
+              <span data-i18n="labs_1_title">Community Board Engine</span>
+              <a class="detail-arrow" href="https://board.stewrobot.com" target="_blank" rel="noreferrer">↗</a>
+            </h3>
+            <p>
+              게시글/댓글/비밀번호 보호 기반의 커뮤니티 엔진입니다. 단순 CRUD를 넘어서, 제품 피드백 루프를 빠르게 돌리는
+              운영형 보드를 목표로 설계했습니다.
+            </p>
+            <ul>
+              <li>핵심 기능: Post/Comment, 비밀번호 기반 수정·삭제, API Docs(Swagger)</li>
+              <li>운영 포인트: 배포 안정성(HTTPS, 리버스 프록시), 로그 가시화, 향후 공지 고정/검색 확장</li>
+              <li>다음 단계: 전역 조회수, 페이지 번호 네비게이션, 말머리/필터 추가</li>
+            </ul>
+          </article>
+
+          <article id="lab-workflow-runner" class="lab-detail card">
+            <h3>
+              <span data-i18n="labs_2_title">Agent Workflow Runner</span>
+              <a class="detail-arrow" href="https://github.com/stewrobot" target="_blank" rel="noreferrer">↗</a>
+            </h3>
+            <p>
+              반복적인 운영 작업을 에이전트 워크플로우로 자동화하는 실험입니다. 이슈 파악 → 수정 → 배포 → 검증 루프를 짧게
+              만들어, 개발/운영 전환 비용을 줄이는 데 집중합니다.
+            </p>
+            <ul>
+              <li>핵심 기능: 루틴 작업 자동 실행, 컨텍스트 기반 판단, 변경 이력 추적</li>
+              <li>운영 포인트: 위험 작업 분리, 승인 플로우, 실패 시 롤백 경로 확보</li>
+              <li>다음 단계: 운영 플레이북 템플릿화, 품질 체크 자동 리포트</li>
+            </ul>
+          </article>
+
+          <article id="lab-mobile-companion" class="lab-detail card">
+            <h3>
+              <span data-i18n="labs_3_title">Mobile Companion Experiments</span>
+              <a class="detail-arrow" href="https://stewrobot.com" rel="noreferrer">↗</a>
+            </h3>
+            <p>
+              웹 기반 기능을 모바일 사용 맥락에 맞춰 재구성하는 탐색 단계입니다. 빠른 입력, 짧은 확인, 즉각 반응이라는
+              모바일 UX 원칙을 기준으로 기능 우선순위를 정리합니다.
+            </p>
+            <ul>
+              <li>핵심 기능: 모바일 최적 입력 플로우, 알림 중심 상태 업데이트, 경량 피드백 수집</li>
+              <li>운영 포인트: 최소 탭 이동, 저대역폭 대응, 데이터 동기화 안정성</li>
+              <li>다음 단계: 베타 테스트 그룹 운영, 사용 시나리오별 이탈 지점 분석</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -519,7 +569,18 @@ function setMainView(viewName) {
           el.style.display = show ? 'block' : 'none';
         });
 
-        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+              document.querySelectorAll('.card-link').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const href = el.getAttribute('href') || '';
+          if (!href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
           el.classList.toggle('active', el.dataset.view === viewName);
         });
 
@@ -540,7 +601,18 @@ function setMainView(viewName) {
         }
       }
 
-      document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+            document.querySelectorAll('.card-link').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const href = el.getAttribute('href') || '';
+          if (!href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
         el.addEventListener('click', (e) => {
           e.preventDefault();
           setMainView(el.dataset.view);
@@ -766,7 +838,18 @@ function setMainView(viewName) {
         document.querySelectorAll('.home-section').forEach((el) => { el.style.display = ''; });
         document.querySelectorAll('.page-section').forEach((el) => { el.style.display = 'none'; });
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+              document.querySelectorAll('.card-link').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const href = el.getAttribute('href') || '';
+          if (!href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
           el.classList.toggle('active', el.dataset.view === 'home');
         });
       });
@@ -778,7 +861,18 @@ function setMainView(viewName) {
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
-        document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
+              document.querySelectorAll('.card-link').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const href = el.getAttribute('href') || '';
+          if (!href.startsWith('#')) return;
+          const target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
           el.classList.toggle('active', el.dataset.view === 'home');
         });
     </script>
