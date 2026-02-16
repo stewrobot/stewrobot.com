@@ -773,11 +773,15 @@
       if (initialView && ['home','overview','progress','labs','deploy','community'].includes(initialView)) {
         setMainView(initialView);
       } else if (qs.get('back') === '1') {
-        setMainView('labs');
         history.replaceState(null, '', '/');
+        setTimeout(() => {
+          setMainView('labs');
+        }, 40);
       } else if (window.location.hash === '#labs') {
-        setMainView('labs');
         history.replaceState(null, '', '/');
+        setTimeout(() => {
+          setMainView('labs');
+        }, 40);
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
