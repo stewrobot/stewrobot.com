@@ -122,6 +122,7 @@
           <div class="community-toolbar">
             <p class="community-count"><span data-i18n="board_total_label">Total</span> <strong id="communityCount">0</strong></p>
             <div class="community-actions">
+              <button class="btn" id="communityListBtn" type="button" data-i18n="board_tab_home">📋 List</button>
               <button class="btn write-btn" id="communityWriteBtn" type="button" data-i18n="board_tab_write">✏️ Write</button>
             </div>
           </div>
@@ -161,9 +162,7 @@
             <hr class="sep" />
             <h4 data-i18n="comments_title">Comments</h4>
             <div id="communityDetailComments" class="comment-mini-list"></div>
-            <div class="panel-actions">
-              <button class="btn" type="button" id="communityBackToList" data-i18n="back_to_list">Back to list</button>
-            </div>
+            
           </section>
 
           <div class="board-table-wrap" id="communityListWrap">
@@ -444,6 +443,7 @@
 
         document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));
         localStorage.setItem('stewrobot_lang', lang);
+        renderCommunityView();
         loadCommunityPosts();
       }
 
@@ -507,6 +507,7 @@ function setMainView(viewName) {
           document.getElementById('deploy')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          showCommunityList();
           loadCommunityPosts();
         }
       }
@@ -570,16 +571,29 @@ function setMainView(viewName) {
         }
       }
 
-      function showCommunityList() {
-        document.getElementById('communityListWrap').style.display = '';
-        document.getElementById('communityWritePanel').classList.add('hidden');
-        document.getElementById('communityDetailPanel').classList.add('hidden');
+      let communityView = 'list';
+
+      function renderCommunityView() {
+        const listWrap = document.getElementById('communityListWrap');
+        const writePanel = document.getElementById('communityWritePanel');
+        const detailPanel = document.getElementById('communityDetailPanel');
+        const writeBtn = document.getElementById('communityWriteBtn');
+
+        listWrap.style.display = communityView === 'list' ? '' : 'none';
+        writePanel.classList.toggle('hidden', communityView !== 'write');
+        detailPanel.classList.toggle('hidden', communityView !== 'detail');
+
+        if (writeBtn) writeBtn.classList.toggle('active', communityView === 'write');
       }
 
-      function showCommunityWrite() {
-        document.getElementById('communityListWrap').style.display = '';
-        document.getElementById('communityWritePanel').classList.remove('hidden');
-        document.getElementById('communityDetailPanel').classList.add('hidden');
+      function showCommunityList() {
+        communityView = 'list';
+        renderCommunityView();
+      }
+
+      function toggleCommunityWrite() {
+        communityView = communityView === 'write' ? 'list' : 'write';
+        renderCommunityView();
       }
 
       async function openCommunityDetail(postId) {
@@ -587,8 +601,8 @@ function setMainView(viewName) {
         if (!r.ok) return;
         const post = await r.json();
         const panel = document.getElementById('communityDetailPanel');
-        document.getElementById('communityListWrap').style.display = 'none';
-        document.getElementById('communityWritePanel').classList.add('hidden');
+        communityView = 'detail';
+        renderCommunityView();
         panel.classList.remove('hidden');
         document.getElementById('communityDetailTitle').textContent = post.title || 'Untitled';
         document.getElementById('communityDetailMeta').textContent = `${post.author || 'anonymous'} · ${new Date(post.createdAt || Date.now()).toLocaleString()}`;
@@ -598,15 +612,14 @@ function setMainView(viewName) {
         cEl.innerHTML = comments.length
           ? comments.map((c) => `<div class="comment-mini"><strong>${c.author || 'anonymous'}</strong> · ${new Date(c.createdAt || Date.now()).toLocaleString()}<p>${String(c.content || '').replace(/</g,'&lt;')}</p></div>`).join('')
           : '<p class="muted small">No comments yet.</p>';
-        panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
-      document.getElementById('communityWriteBtn')?.addEventListener('click', showCommunityWrite);
-      document.getElementById('communityWriteCancel')?.addEventListener('click', showCommunityList);
-      document.getElementById('communityBackToList')?.addEventListener('click', () => {
+      document.getElementById('communityWriteBtn')?.addEventListener('click', toggleCommunityWrite);
+      document.getElementById('communityListBtn')?.addEventListener('click', () => {
         showCommunityList();
         loadCommunityPosts();
       });
+      document.getElementById('communityWriteCancel')?.addEventListener('click', showCommunityList);
 
       document.getElementById('communityWriteForm')?.addEventListener('submit', async (e) => {
         e.preventDefault();
