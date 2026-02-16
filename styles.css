@@ -191,20 +191,21 @@ body {
 
 .lang-state {
   margin-left: 6px;
-  font-size: 0.64rem;
+  width: 10px;
+  height: 10px;
   border: 1px solid #4a5c83;
   border-radius: 999px;
-  padding: 2px 7px;
-  color: #98add9;
-  background: rgba(74, 92, 131, 0.16);
-  font-weight: 700;
-  line-height: 1;
+  padding: 0;
+  background: rgba(74, 92, 131, 0.45);
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  flex: 0 0 10px;
 }
 
 .lang-state.full {
   border-color: #3d8c69;
-  color: #b9f5db;
-  background: rgba(61, 140, 105, 0.22);
+  background: rgba(98, 222, 160, 0.9);
 }
 
 .hero { padding: 88px 0 44px; }
