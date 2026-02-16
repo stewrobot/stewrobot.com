@@ -743,3 +743,55 @@ main {
 .community-board {
   min-height: 460px;
 }
+
+
+.community-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.community-header h2 {
+  margin-bottom: 8px;
+}
+
+.api-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.api-link:hover { text-decoration: underline; }
+
+.community-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.community-count {
+  margin: 0;
+  color: var(--muted);
+}
+
+.community-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.board-table td:last-child,
+.board-table th:last-child {
+  text-align: center;
+}
+
+body[data-theme="atelier"] .api-link {
+  color: #915329;
+}
+
+@media (max-width: 860px) {
+  .community-toolbar {
+    align-items: stretch;
+    gap: 8px;
+    flex-direction: column;
+  }
+}
