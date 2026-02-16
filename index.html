@@ -35,14 +35,14 @@
 
     <main>
       <section id="top" class="hero container">
-        <p class="eyebrow">♾️ Cosmic AI Builder</p>
+        <p class="eyebrow" data-i18n="eyebrow">♾️ Cosmic AI Builder</p>
         <h1 data-i18n="hero_title">Board-first launch in motion.</h1>
         <p class="lead" data-i18n="hero_lead">
           stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="https://github.com/stewrobot" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="https://board.stewrobot.com" rel="noreferrer">Live board ↗</a>
+          <a class="btn primary" href="https://github.com/stewrobot" target="_blank" rel="noreferrer" data-i18n="cta_github">GitHub</a>
+          <a class="btn" href="https://board.stewrobot.com" rel="noreferrer" data-i18n="cta_liveboard">Live board ↗</a>
           <a class="btn" href="https://x.com/stewrobot" target="_blank" rel="noreferrer">X</a>
           <a class="btn" href="https://instagram.com/stewrobot" target="_blank" rel="noreferrer">Instagram</a>
         </div>
@@ -59,68 +59,71 @@
         <h2 data-i18n="status_title">Progress</h2>
         <div class="cards">
           <article class="card status done">
-            <h3>✅ Domain & Pages</h3>
-            <p>stewrobot.com is live and connected to GitHub Pages.</p>
+            <h3 data-i18n="status_1_title">✅ Domain & Pages</h3>
+            <p data-i18n="status_1_text">stewrobot.com is live and connected to GitHub Pages.</p>
           </article>
           <article class="card status done">
-            <h3>✅ Board Server Repo</h3>
-            <p>Node.js board backend pushed with API, comments, password protection, and docs.</p>
+            <h3 data-i18n="status_2_title">✅ Board Server Repo</h3>
+            <p data-i18n="status_2_text">Node.js board backend pushed with API, comments, password protection, and docs.</p>
           </article>
           <article class="card status done">
-            <h3>✅ Live Board Deploy</h3>
-            <p>HTTPS is enabled and board service is now reachable at board.stewrobot.com.</p>
+            <h3 data-i18n="status_3_title">✅ Live Board Deploy</h3>
+            <p data-i18n="status_3_text">HTTPS is enabled and board service is now reachable at board.stewrobot.com.</p>
           </article>
         </div>
 
         <div class="live-slot">
-          <p class="label">Live board URL</p>
-          <p><strong><a href="https://board.stewrobot.com" rel="noreferrer">https://board.stewrobot.com</a></strong> <span class="chip live">online</span></p>
-          <p class="hint">Community board is now live with HTTPS.</p>
+          <p class="label" data-i18n="live_label">Live board URL</p>
+          <p>
+            <strong><a href="https://board.stewrobot.com" rel="noreferrer">https://board.stewrobot.com</a></strong>
+            <span class="chip live" data-i18n="live_chip">online</span>
+          </p>
+          <p class="hint" data-i18n="live_hint">Community board is now live with HTTPS.</p>
         </div>
       </section>
 
       <section id="board" class="container section">
         <div class="board-head">
-          <h2>Community Board (Preview)</h2>
-          <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer">Board source ↗</a>
+          <h2 data-i18n="board_title">Community Board (Preview)</h2>
+          <a class="btn" href="https://github.com/stewrobot/board-server" target="_blank" rel="noreferrer" data-i18n="board_source">Board source ↗</a>
         </div>
-        <p class="board-note">Live board deployment is in progress. This preview reflects the target interaction model.</p>
+        <p class="board-note" data-i18n="board_note">Live board deployment is complete. This preview shows the intended interaction style.</p>
 
         <div class="board-layout">
           <div class="board-feed">
             <article class="post-card">
-              <h3>[공지] stewrobot 프로젝트 로드맵 v0.1</h3>
-              <p>모바일 앱 베타 일정과 웹 기능 우선순위를 공유합니다. 피드백은 댓글로 남겨주세요.</p>
-              <div class="post-meta">admin · 22:31 · 댓글 4</div>
+              <h3 data-i18n="post1_title">[Notice] stewrobot roadmap v0.1</h3>
+              <p data-i18n="post1_body">Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.</p>
+              <div class="post-meta" data-i18n="post1_meta">admin · 22:31 · comments 4</div>
             </article>
 
             <article class="post-card">
-              <h3>첫 사용자 테스트 참여자 모집</h3>
-              <p>iOS / Android 클로즈드 테스트를 진행합니다. 참여 희망자는 이메일로 연락 부탁드립니다.</p>
-              <div class="post-meta">team · 21:52 · 댓글 2</div>
+              <h3 data-i18n="post2_title">Looking for first user test participants</h3>
+              <p data-i18n="post2_body">Closed beta is planned for iOS and Android. Reach out on the board if you want to join.</p>
+              <div class="post-meta" data-i18n="post2_meta">team · 21:52 · comments 2</div>
             </article>
 
             <article class="post-card">
-              <h3>Q&A: 도메인 연결 + HTTPS 적용 타임라인</h3>
-              <p>DNS 전파/인증서 발급까지 걸리는 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.</p>
-              <div class="post-meta">plainkernel · 20:07 · 댓글 7</div>
+              <h3 data-i18n="post3_title">Q&A: Domain + HTTPS timeline</h3>
+              <p data-i18n="post3_body">We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.</p>
+              <div class="post-meta" data-i18n="post3_meta">stewrobot · 20:07 · comments 7</div>
             </article>
           </div>
 
           <aside class="board-side">
             <div class="side-card">
-              <h4>Write a post</h4>
-              <p>로그인 후 글쓰기 가능 (추후 활성화)</p>
-              <button disabled>New Post</button>
+              <h4 data-i18n="side_write_title">Write a post</h4>
+              <p data-i18n="side_write_text">Posting is available in the live board.</p>
+              <button disabled data-i18n="side_write_btn">New Post</button>
             </div>
 
             <div class="side-card">
-              <h4>Popular tags</h4>
+              <h4 data-i18n="side_tags_title">Popular tags</h4>
               <div class="tags">
-                <span>#공지</span>
-                <span>#개발로그</span>
-                <span>#QnA</span>
-                <span>#피드백</span>
+                <span data-i18n="tag1">#notice</span>
+                <span data-i18n="tag2">#devlog</span>
+                <span data-i18n="tag3">#QnA</span>
+                <span data-i18n="tag4">#feedback</span>
               </div>
             </div>
           </aside>
@@ -128,14 +131,14 @@
       </section>
 
       <section id="deploy" class="container section">
-        <h2>Deployment Checklist</h2>
+        <h2 data-i18n="deploy_title">Deployment Checklist</h2>
         <ul class="checklist">
-          <li>Install MySQL + PM2 + Nginx on production server</li>
-          <li>Apply <code>sql/schema.sql</code> to MySQL database</li>
-          <li>Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code></li>
-          <li>Run app on port 3000 via PM2 (<code>ecosystem.config.cjs</code>)</li>
-          <li>Reverse proxy <code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code></li>
-          <li>Enable HTTPS certificate and verify CRUD + API docs</li>
+          <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
+          <li data-i18n-html="deploy_2">Apply <code>sql/schema.sql</code> to MySQL database</li>
+          <li data-i18n-html="deploy_3">Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code></li>
+          <li data-i18n-html="deploy_4">Run app on port 3000 via PM2 (<code>ecosystem.config.cjs</code>)</li>
+          <li data-i18n-html="deploy_5">Reverse proxy <code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code></li>
+          <li data-i18n-html="deploy_6">Enable HTTPS certificate and verify CRUD + API docs</li>
         </ul>
       </section>
 
@@ -148,7 +151,7 @@
 
     <footer class="footer">
       <div class="container">
-        <p>© <span id="y"></span> stewrobot. All rights reserved.</p>
+        <p><span data-i18n="footer_prefix">©</span> <span id="y"></span> stewrobot. <span data-i18n="footer_suffix">All rights reserved.</span></p>
       </div>
     </footer>
 
@@ -157,60 +160,120 @@
 
       const i18n = {
         ko: {
-          nav_about: '소개',
-          nav_status: '진행상황',
-          nav_board: '게시판',
-          nav_contact: '커뮤니티',
+          nav_about: '개요', nav_status: '진행상황', nav_board: '보드', nav_contact: '커뮤니티',
+          eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: '보드 중심 런칭, 진행 중.',
           hero_lead: 'stewrobot은 커뮤니티 보드를 중심으로 실용적인 AI 제품을 만듭니다. 더 빠른 피드백, 더 빠른 출시.',
+          cta_github: 'GitHub', cta_liveboard: '라이브 보드 ↗',
           about_title: '개요',
           about_text: '우리는 사람들이 실제로 쓰는 소프트웨어를 설계·프로토타이핑·출시합니다. 현재 집중 영역은 보드 경험, 모바일 앱 기반, AI 워크플로우 도구입니다.',
           status_title: '진행상황',
-          community_title: '커뮤니티',
-          community_text: '공식 소통은 라이브 게시판에서 진행됩니다.',
-          community_link: 'board.stewrobot.com 바로가기 ↗'
+          status_1_title: '✅ 도메인 & 페이지', status_1_text: 'stewrobot.com이 GitHub Pages와 연결되어 라이브 상태입니다.',
+          status_2_title: '✅ 보드 서버 레포', status_2_text: 'Node.js 보드 백엔드(API/댓글/비밀번호 보호/문서) 푸시 완료.',
+          status_3_title: '✅ 라이브 보드 배포', status_3_text: 'HTTPS 활성화 완료, board.stewrobot.com 접속 가능.',
+          live_label: '라이브 보드 URL', live_chip: '온라인', live_hint: '커뮤니티 보드는 HTTPS로 운영 중입니다.',
+          board_title: '커뮤니티 보드 (미리보기)', board_source: '보드 소스 ↗',
+          board_note: '라이브 보드 배포가 완료되었습니다. 아래는 목표 상호작용 스타일 미리보기입니다.',
+          post1_title: '[공지] stewrobot 로드맵 v0.1', post1_body: '모바일 베타 일정과 웹 기능 우선순위를 공유합니다. 댓글로 피드백 남겨주세요.', post1_meta: 'admin · 22:31 · 댓글 4',
+          post2_title: '첫 사용자 테스트 참여자 모집', post2_body: 'iOS/Android 클로즈드 베타 예정. 참여 희망자는 보드에서 알려주세요.', post2_meta: 'team · 21:52 · 댓글 2',
+          post3_title: 'Q&A: 도메인 + HTTPS 타임라인', post3_body: 'DNS 전파/인증서 발급 시간을 정리했습니다. 막히는 지점이 있으면 질문 주세요.', post3_meta: 'stewrobot · 20:07 · 댓글 7',
+          side_write_title: '글 작성', side_write_text: '실제 글쓰기는 라이브 보드에서 가능합니다.', side_write_btn: '새 글',
+          side_tags_title: '인기 태그', tag1: '#공지', tag2: '#개발로그', tag3: '#QnA', tag4: '#피드백',
+          deploy_title: '배포 체크리스트',
+          deploy_1: '운영 서버에 MySQL + PM2 + Nginx 설치',
+          deploy_2: 'MySQL에 <code>sql/schema.sql</code> 적용',
+          deploy_3: '운영 DB 값으로 <code>.env</code> 설정, <code>USE_IN_MEMORY=false</code> 확인',
+          deploy_4: 'PM2로 3000 포트 실행 (<code>ecosystem.config.cjs</code>)',
+          deploy_5: '<code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code> 리버스 프록시',
+          deploy_6: 'HTTPS 인증서 적용 후 CRUD + API docs 검증',
+          community_title: '커뮤니티', community_text: '공식 소통은 라이브 보드에서 진행됩니다.', community_link: 'board.stewrobot.com 바로가기 ↗',
+          footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         en: {
-          nav_about: 'Overview',
-          nav_status: 'Progress',
-          nav_board: 'Board',
-          nav_contact: 'Community',
+          nav_about: 'Overview', nav_status: 'Progress', nav_board: 'Board', nav_contact: 'Community',
+          eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
           hero_lead: 'stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.',
+          cta_github: 'GitHub', cta_liveboard: 'Live board ↗',
           about_title: 'Overview',
           about_text: 'We design, prototype, and launch clean software people can actually use. Current focus: board experience, mobile app foundation, and AI workflow tooling.',
           status_title: 'Progress',
-          community_title: 'Community',
-          community_text: 'Official communication is now handled in the live board.',
-          community_link: 'Go to board.stewrobot.com ↗'
+          status_1_title: '✅ Domain & Pages', status_1_text: 'stewrobot.com is live and connected to GitHub Pages.',
+          status_2_title: '✅ Board Server Repo', status_2_text: 'Node.js board backend pushed with API, comments, password protection, and docs.',
+          status_3_title: '✅ Live Board Deploy', status_3_text: 'HTTPS is enabled and board service is now reachable at board.stewrobot.com.',
+          live_label: 'Live board URL', live_chip: 'online', live_hint: 'Community board is now live with HTTPS.',
+          board_title: 'Community Board (Preview)', board_source: 'Board source ↗',
+          board_note: 'Live board deployment is complete. This preview shows the intended interaction style.',
+          post1_title: '[Notice] stewrobot roadmap v0.1', post1_body: 'Sharing the mobile beta timeline and web feature priorities. Leave feedback in comments.', post1_meta: 'admin · 22:31 · comments 4',
+          post2_title: 'Looking for first user test participants', post2_body: 'Closed beta is planned for iOS and Android. Reach out on the board if you want to join.', post2_meta: 'team · 21:52 · comments 2',
+          post3_title: 'Q&A: Domain + HTTPS timeline', post3_body: 'We summarized DNS propagation and certificate issuance timing. Ask if you hit any blockers.', post3_meta: 'stewrobot · 20:07 · comments 7',
+          side_write_title: 'Write a post', side_write_text: 'Posting is available in the live board.', side_write_btn: 'New Post',
+          side_tags_title: 'Popular tags', tag1: '#notice', tag2: '#devlog', tag3: '#QnA', tag4: '#feedback',
+          deploy_title: 'Deployment Checklist',
+          deploy_1: 'Install MySQL + PM2 + Nginx on production server',
+          deploy_2: 'Apply <code>sql/schema.sql</code> to MySQL database',
+          deploy_3: 'Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code>',
+          deploy_4: 'Run app on port 3000 via PM2 (<code>ecosystem.config.cjs</code>)',
+          deploy_5: 'Reverse proxy <code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code>',
+          deploy_6: 'Enable HTTPS certificate and verify CRUD + API docs',
+          community_title: 'Community', community_text: 'Official communication is now handled in the live board.', community_link: 'Go to board.stewrobot.com ↗',
+          footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         ja: {
-          nav_about: '概要',
-          nav_status: '進捗',
-          nav_board: '掲示板',
-          nav_contact: 'コミュニティ',
+          nav_about: '概要', nav_status: '進捗', nav_board: '掲示板', nav_contact: 'コミュニティ',
+          eyebrow: '♾️ コズミックAIビルダー',
           hero_title: 'ボード中心のローンチ、進行中。',
           hero_lead: 'stewrobotはコミュニティボードを中心に、実用的なAIプロダクトを構築しています。より速いフィードバック、より速いリリース。',
+          cta_github: 'GitHub', cta_liveboard: 'ライブボード ↗',
           about_title: '概要',
           about_text: '私たちは実際に使われるソフトウェアを設計・試作・公開します。現在の重点は掲示板体験、モバイル基盤、AIワークフローツールです。',
           status_title: '進捗',
-          community_title: 'コミュニティ',
-          community_text: '公式コミュニケーションはライブ掲示板で行っています。',
-          community_link: 'board.stewrobot.com へ ↗'
+          status_1_title: '✅ ドメイン & Pages', status_1_text: 'stewrobot.com は GitHub Pages で公開中です。',
+          status_2_title: '✅ ボードサーバー リポジトリ', status_2_text: 'Node.jsボードバックエンド(API/コメント/パスワード保護/ドキュメント)をプッシュ済み。',
+          status_3_title: '✅ ライブボード配備', status_3_text: 'HTTPSが有効化され、board.stewrobot.com で利用可能です。',
+          live_label: 'ライブボードURL', live_chip: 'online', live_hint: 'コミュニティボードはHTTPSで稼働中です。',
+          board_title: 'コミュニティ掲示板（プレビュー）', board_source: 'ボードソース ↗',
+          board_note: 'ライブ配備は完了しています。以下は想定UIスタイルのプレビューです。',
+          post1_title: '[お知らせ] stewrobot ロードマップ v0.1', post1_body: 'モバイルベータ日程とWeb機能の優先順位を共有します。コメントでフィードバックをお願いします。', post1_meta: 'admin · 22:31 · コメント 4',
+          post2_title: '最初のユーザーテスト参加者を募集', post2_body: 'iOS/Android向けクローズドベータを予定。参加希望は掲示板で知らせてください。', post2_meta: 'team · 21:52 · コメント 2',
+          post3_title: 'Q&A: ドメイン + HTTPS タイムライン', post3_body: 'DNS伝播と証明書発行の所要時間をまとめました。詰まったら質問してください。', post3_meta: 'stewrobot · 20:07 · コメント 7',
+          side_write_title: '投稿する', side_write_text: '実際の投稿はライブ掲示板で可能です。', side_write_btn: '新規投稿',
+          side_tags_title: '人気タグ', tag1: '#お知らせ', tag2: '#開発ログ', tag3: '#QnA', tag4: '#フィードバック',
+          deploy_title: 'デプロイチェックリスト',
+          deploy_1: '本番サーバーに MySQL + PM2 + Nginx をインストール',
+          deploy_2: 'MySQL に <code>sql/schema.sql</code> を適用',
+          deploy_3: '本番DB値で <code>.env</code> を設定し <code>USE_IN_MEMORY=false</code> を確認',
+          deploy_4: 'PM2で3000ポート実行（<code>ecosystem.config.cjs</code>）',
+          deploy_5: '<code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code> リバースプロキシ',
+          deploy_6: 'HTTPS証明書適用後、CRUD + API docs を確認',
+          community_title: 'コミュニティ', community_text: '公式コミュニケーションはライブ掲示板で行っています。', community_link: 'board.stewrobot.com へ ↗',
+          footer_prefix: '©', footer_suffix: 'All rights reserved.'
         }
       };
 
       function applyLang(lang) {
+        document.documentElement.lang = lang;
+
         document.querySelectorAll('[data-i18n]').forEach((el) => {
           const key = el.getAttribute('data-i18n');
           if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
         });
+
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+          const key = el.getAttribute('data-i18n-html');
+          if (i18n[lang] && i18n[lang][key]) el.innerHTML = i18n[lang][key];
+        });
+
         document.querySelectorAll('.lang-btn').forEach((b) => b.classList.toggle('active', b.dataset.lang === lang));
+        localStorage.setItem('stewrobot_lang', lang);
       }
 
       document.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.addEventListener('click', () => applyLang(btn.dataset.lang));
       });
+
+      const savedLang = localStorage.getItem('stewrobot_lang');
+      if (savedLang && i18n[savedLang]) applyLang(savedLang);
     </script>
   </body>
 </html>
