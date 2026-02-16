@@ -768,6 +768,9 @@
       const initialView = new URLSearchParams(window.location.search).get('view');
       if (initialView && ['home','overview','progress','labs','deploy','community'].includes(initialView)) {
         setMainView(initialView);
+      } else if (window.location.hash === '#labs') {
+        setMainView('labs');
+        history.replaceState(null, '', window.location.pathname + window.location.search);
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         document.querySelectorAll('.main-nav .nav-link').forEach((el) => {
