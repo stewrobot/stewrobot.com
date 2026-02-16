@@ -444,7 +444,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   color: var(--muted);
   font-size: 0.9rem;
 }
-.footer .container { padding: 20px 0 40px; }
+.footer .container { padding: 20px 0 40px; text-align: center; }
 
 @media (max-width: 860px) {
   .topbar nav { display: none; }
