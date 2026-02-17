@@ -260,8 +260,8 @@
       
 
       <div class="floating-nav">
-        <button id="menuStepBtn" class="back-to-top menu-step" aria-label="Next menu section">≡</button>
-        <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+        <button id="menuStepBtn" class="back-to-top menu-step" aria-label="Previous menu bookmark">↑</button>
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">⇈</button>
       </div>
     </main>
 
@@ -1098,7 +1098,8 @@
 
       const backToTopBtn = document.getElementById('backToTop');
       const menuStepBtn = document.getElementById('menuStepBtn');
-      const mobileStepOrder = ['home', 'community', 'overview', 'progress', 'labs', 'deploy'];
+      const bookmarkIds = ['top', 'about', 'status', 'labs', 'deploy', 'board'];
+
       const syncBackToTop = () => {
         if (!backToTopBtn || !menuStepBtn) return;
         const show = window.scrollY > 260;
@@ -1106,15 +1107,30 @@
         menuStepBtn.classList.toggle('show', show);
       };
       window.addEventListener('scroll', syncBackToTop, { passive: true });
+
       backToTopBtn?.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
       menuStepBtn?.addEventListener('click', () => {
-        const active = document.querySelector('.main-nav .nav-link.active')?.dataset.view || 'home';
-        const idx = mobileStepOrder.indexOf(active);
-        const next = mobileStepOrder[(idx + 1) % mobileStepOrder.length];
-        setMainView(next);
+        const y = window.scrollY;
+        const candidates = bookmarkIds
+          .map((id) => document.getElementById(id))
+          .filter(Boolean)
+          .map((el) => ({ el, y: el.offsetTop }))
+          .filter((item) => item.el.offsetParent !== null)
+          .filter((item) => item.y < y - 24)
+          .sort((a, b) => a.y - b.y);
+
+        if (!candidates.length) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        const target = candidates[candidates.length - 1].el;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+
       syncBackToTop();
 
       const qs = new URLSearchParams(window.location.search);
