@@ -22,11 +22,16 @@ body {
   overflow-y: scroll;
 }
 
+main { padding-top: 64px; }
+
 .container { width: min(1080px, 92%); margin: 0 auto; }
 .row { display: flex; align-items: center; justify-content: space-between; }
 
 .topbar {
-  position: sticky; top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
   background: rgba(11, 15, 26, 0.75);
@@ -453,6 +458,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
 .footer .container { padding: 20px 0 40px; text-align: center; }
 
 @media (max-width: 860px) {
+  main { padding-top: 70px; }
   .topbar .container,
   .topbar .row,
   .top-actions,
@@ -697,6 +703,7 @@ body[data-theme="atelier"] .ops-visual {
 }
 
 @media (max-width: 860px) {
+  main { padding-top: 70px; }
   .ops-visual .flow {
     grid-template-columns: 1fr;
   }
@@ -848,6 +855,7 @@ body[data-theme="atelier"] .api-link {
 }
 
 @media (max-width: 860px) {
+  main { padding-top: 70px; }
   .community-toolbar {
     align-items: stretch;
     gap: 8px;
@@ -974,6 +982,7 @@ body[data-theme="atelier"] .comment-badge {
 }
 
 @media (max-width: 860px) {
+  main { padding-top: 70px; }
   .community-shell { padding: 14px; }
   .community-toolbar { flex-direction: column; align-items: stretch; gap: 8px; }
 
@@ -1059,6 +1068,7 @@ body[data-theme="atelier"] .comment-badge {
 .comment-mini p { margin: 6px 0 0; }
 
 @media (max-width: 860px) {
+  main { padding-top: 70px; }
   .form-grid { grid-template-columns: 1fr; }
 }
 
