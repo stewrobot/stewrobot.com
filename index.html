@@ -14,7 +14,6 @@
     <header class="topbar">
       <div class="container row">
         <a class="brand" href="/" aria-label="Reload home" id="brandTopLink">
-          <span class="brand-mark">♾️</span>
           <span class="brand-word">stewrobot</span>
         </a>
         <div class="top-actions">
@@ -258,6 +257,8 @@
       </section>
 
       
+
+      <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
     </main>
 
     <footer class="footer">
@@ -1079,6 +1080,18 @@
 
       const savedLang = localStorage.getItem('stewrobot_lang');
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
+
+
+      const backToTopBtn = document.getElementById('backToTop');
+      const syncBackToTop = () => {
+        if (!backToTopBtn) return;
+        backToTopBtn.classList.toggle('show', window.scrollY > 420);
+      };
+      window.addEventListener('scroll', syncBackToTop, { passive: true });
+      backToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      syncBackToTop();
 
       const qs = new URLSearchParams(window.location.search);
       const initialView = qs.get('view');
