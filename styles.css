@@ -11,7 +11,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; scroll-behavior: smooth; overflow-x: hidden; }
 html { scrollbar-gutter: stable; }
 body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
@@ -460,16 +460,27 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
     min-width: 0;
   }
 
-  .topbar nav {
+  .top-actions {
     display: flex;
-    max-width: 64vw;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .topbar nav {
+    display: flex !important;
+    flex: 1 1 auto;
+    width: auto;
+    max-width: none;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    margin-right: 4px;
   }
   .topbar nav::-webkit-scrollbar { display: none; }
-  .topbar nav a { margin-left: 10px; font-size: 0.86rem; }
+  .topbar nav a { margin-left: 10px; font-size: 0.86rem; flex: 0 0 auto; }
   .topbar nav a:first-child { margin-left: 0; }
 
   .theme-toggle {
@@ -481,7 +492,6 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
     font-size: 1.05rem;
   }
 
-  .top-actions { gap: 6px; }
   .board-layout { grid-template-columns: 1fr; }
   .board-frame { height: 58vh; }
 }
