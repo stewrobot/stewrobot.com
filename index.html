@@ -261,7 +261,7 @@
 
       <div class="floating-nav">
         <button id="menuStepBtn" class="back-to-top menu-step" aria-label="Previous menu bookmark">↑</button>
-        <button id="backToTop" class="back-to-top" aria-label="Back to top">⇈</button>
+        
       </div>
     </main>
 
@@ -1096,21 +1096,15 @@
       applyLang(savedLang && i18n[savedLang] ? savedLang : 'en');
 
 
-      const backToTopBtn = document.getElementById('backToTop');
       const menuStepBtn = document.getElementById('menuStepBtn');
       const bookmarkIds = ['top', 'about', 'status', 'labs', 'deploy', 'board'];
 
       const syncBackToTop = () => {
-        if (!backToTopBtn || !menuStepBtn) return;
+        if (!menuStepBtn) return;
         const show = window.scrollY > 260;
-        backToTopBtn.classList.toggle('show', show);
         menuStepBtn.classList.toggle('show', show);
       };
       window.addEventListener('scroll', syncBackToTop, { passive: true });
-
-      backToTopBtn?.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
 
       menuStepBtn?.addEventListener('click', () => {
         const y = window.scrollY;
