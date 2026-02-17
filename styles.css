@@ -453,9 +453,16 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
 .footer .container { padding: 20px 0 40px; text-align: center; }
 
 @media (max-width: 860px) {
+  .topbar .container,
+  .topbar .row,
+  .top-actions,
+  .topbar nav {
+    min-width: 0;
+  }
+
   .topbar nav {
     display: flex;
-    max-width: 52vw;
+    max-width: 64vw;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
@@ -464,6 +471,15 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   .topbar nav::-webkit-scrollbar { display: none; }
   .topbar nav a { margin-left: 10px; font-size: 0.86rem; }
   .topbar nav a:first-child { margin-left: 0; }
+
+  .theme-toggle {
+    font-size: 0;
+    padding: 4px 6px;
+  }
+  .theme-toggle::before {
+    content: "🎨";
+    font-size: 1.05rem;
+  }
 
   .top-actions { gap: 6px; }
   .board-layout { grid-template-columns: 1fr; }
