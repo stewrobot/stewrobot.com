@@ -475,7 +475,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
     position: relative;
   }
 
-  .menu-toggle { display: inline-flex; }
+  .menu-toggle { display: inline-flex !important; }
 
   .topbar nav {
     display: none !important;
