@@ -824,7 +824,7 @@
       document.querySelectorAll('.theme-btn').forEach((btn) => {
         btn.addEventListener('click', () => {
           applyTheme(btn.dataset.theme);
-          closeThemeMenu();
+          // keep theme layer open; it closes when tapping outside
         });
       });
       function setMainView(viewName) {
