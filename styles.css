@@ -493,7 +493,6 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
   .topbar nav::-webkit-scrollbar { display: none; }
 
   .topbar nav .nav-link { display: none; }
-  .topbar nav .nav-link[data-view="home"],
   .topbar nav .nav-link[data-view="community"] {
     display: inline-flex;
   }
