@@ -475,7 +475,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
     position: relative;
   }
 
-  .menu-toggle { display: inline-flex !important; }
+  .menu-toggle { display: none !important; }
 
   .topbar nav {
     display: none !important;
@@ -1183,9 +1183,7 @@ button { cursor: pointer; }
 
 
 .back-to-top {
-  position: fixed;
-  right: 16px;
-  bottom: 18px;
+  position: static;
   width: 42px;
   height: 42px;
   border-radius: 999px;
@@ -1216,4 +1214,14 @@ button { cursor: pointer; }
   padding: 4px 8px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.floating-nav {
+  position: static;
+  display: grid;
+  gap: 8px;
+  z-index: 1001;
+}
+.menu-step {
+  font-size: 0.95rem;
 }
