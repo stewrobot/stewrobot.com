@@ -236,7 +236,7 @@ h1 { font-size: clamp(2rem, 5vw, 4rem); margin: 0 0 14px; line-height: 1.1; }
 
 .page-section { display: none; }
 
-.section { padding: 38px 0; scroll-margin-top: 84px; }
+.section { padding: 38px 0; scroll-margin-top: 72px; }
 .section h2 { margin: 0 0 10px; }
 .section p { color: var(--muted); }
 
@@ -1139,7 +1139,7 @@ button { cursor: pointer; }
 }
 
 .lab-detail {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 72px;
 }
 
 .lab-detail h3 {
