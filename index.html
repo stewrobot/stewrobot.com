@@ -14,6 +14,7 @@
     <header class="topbar">
       <div class="container row">
         <a class="brand" href="/" aria-label="Reload home" id="brandTopLink">
+          <span class="brand-mark">🥘</span>
           <span class="brand-word">stewrobot</span>
         </a>
         <div class="top-actions">
@@ -23,8 +24,7 @@
             <a href="#" class="nav-link" data-view="overview" data-i18n="nav_about">Overview</a>
             <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
             <a href="#" class="nav-link" data-view="labs" data-i18n="nav_labs">Labs</a>
-            <a href="#" class="nav-link" data-view="deploy" data-i18n="nav_deploy">Deploy</a>
-            <a href="#" class="nav-link community-link" data-view="community" data-i18n="nav_contact">24/7</a>
+                        <a href="#" class="nav-link community-link" data-view="community" data-i18n="nav_contact">24/7</a>
           </nav>
 
           <div class="theme-switch" aria-label="Theme switcher">
@@ -56,58 +56,62 @@
 
     <main>
       <section id="top" class="hero container home-section">
-        <p class="eyebrow" data-i18n="eyebrow">♾️ Cosmic AI Builder</p>
-        <h1 data-i18n="hero_title">Board-first launch in motion.</h1>
-        <p class="lead" data-i18n="hero_lead">
-          stewrobot is building practical AI products with a community board at the center: faster feedback loops, faster shipping.
+        <p class="eyebrow" data-i18n="eyebrow_new">🥘 Board-first AI product studio</p>
+        <h1 data-i18n="hero_title_new">Board-first AI products, built in public.</h1>
+        <p class="lead" data-i18n="hero_lead_new">
+          stewrobot builds practical tools with a live feedback loop at the center. We build fast, learn in public, and turn board signals into product direction.
         </p>
         <div class="cta-row">
-          <a class="btn" href="https://github.com/stewrobot" target="_blank" rel="noreferrer" data-i18n="cta_github">GitHub</a>
-          <a class="btn" href="https://x.com/stewrobot" target="_blank" rel="noreferrer">X</a>
-          <a class="btn" href="https://instagram.com/stewrobot" target="_blank" rel="noreferrer">Instagram</a>
+          <a class="btn primary" href="/?view=community" data-i18n="cta_board">Open the Board</a>
+          <a class="btn" href="/?view=labs" data-i18n="cta_labs">Explore the Labs</a>
+          <a class="btn" href="https://github.com/stewrobot" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </section>
 
       <section id="about" class="container section home-section">
-        <h2 data-i18n="about_title">Overview</h2>
-        <p data-i18n="about_text">
-          stewrobot builds practical AI products that move from concept to real usage with unusual speed.
+        <h2 data-i18n="about_title_new">What stewrobot is</h2>
+        <p data-i18n="about_text_new">
+          stewrobot is an AI product studio built around one simple operating idea: ship useful things, stay close to feedback, and improve in public.
         </p>
-        <p data-i18n="about_text_2">
-          We focus on product clarity first: clear problem framing, fast prototypes, and tight feedback loops with real users through the community board.
-          The goal is not to ship demos—it is to ship tools people return to.
-        </p>
-        <p data-i18n="about_text_3">
-          Current scope spans web platform architecture, mobile-ready product foundations, and autonomous workflow systems.
-          Every release is treated like an operating system update: measurable, iterative, and publicly trackable through progress logs.
-        </p>
+        <div class="cards identity-cards">
+          <article class="card">
+            <h3 data-i18n="identity_1_title">Practical by default</h3>
+            <p data-i18n="identity_1_text">We care less about flashy demos and more about tools that survive real use.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="identity_2_title">Board-first workflow</h3>
+            <p data-i18n="identity_2_text">Ideas, feedback, and direction are meant to flow through the board instead of disappearing into private forms.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="identity_3_title">Built in public</h3>
+            <p data-i18n="identity_3_text">Progress is visible, messy, iterative, and tied to what actually gets shipped next.</p>
+          </article>
+        </div>
       </section>
 
       <section id="status" class="container section home-section">
-        <h2 data-i18n="status_title">Progress</h2>
+        <h2 data-i18n="status_title_new">Status</h2>
         <div class="cards">
           <article class="card status done">
-            <h3 data-i18n="status_1_title">✅ Domain & Pages</h3>
-            <p data-i18n="status_1_text">stewrobot.com is live and connected to GitHub Pages.</p>
+            <h3 data-i18n="status_1_title_new">✅ Public site live</h3>
+            <p data-i18n="status_1_text_new">stewrobot.com is live on GitHub Pages as the public face of the project.</p>
+          </article>
+          <article class="card status wip">
+            <h3 data-i18n="status_2_title_new">🛠️ Board redeploy in progress</h3>
+            <p data-i18n="status_2_text_new">The board backend exists, but the production server is being rebuilt after the previous Linux host was lost.</p>
           </article>
           <article class="card status done">
-            <h3 data-i18n="status_2_title">✅ Board Server Repo</h3>
-            <p data-i18n="status_2_text">Node.js board backend pushed with API, comments, password protection, and docs.</p>
-          </article>
-          <article class="card status done">
-            <h3 data-i18n="status_3_title">✅ Live Board Deploy</h3>
-            <p data-i18n="status_3_text">HTTPS is enabled and board service is now reachable at board.stewrobot.com.</p>
+            <h3 data-i18n="status_3_title_new">📦 Core product direction set</h3>
+            <p data-i18n="status_3_text_new">The operating model is now clear: practical AI tools, shaped through an open board-first loop.</p>
           </article>
         </div>
 
         <div class="progress-log">
-          <h3 data-i18n="progress_log_title">Recent milestones (latest first)</h3>
+          <h3 data-i18n="progress_log_title_new">Now / Next / Later</h3>
           <ul>
-            <li><strong>2026-02-17</strong> — <span data-i18n="milestone_1">Live board HTTPS activation + custom domain routing stabilized.</span></li>
-            <li><strong>2026-02-17</strong> — <span data-i18n="milestone_2">Community workspace mode added (in-page board control tabs).</span></li>
-            <li><strong>2026-02-16</strong> — <span data-i18n="milestone_3">Board CRUD, comments, password protection, and IP capture completed.</span></li>
-            <li><strong>2026-02-16</strong> — <span data-i18n="milestone_4">Monorepo structure launched for web, mobile, backend, and shared packages.</span></li>
-            <li><strong>2026-02-16</strong> — <span data-i18n="milestone_5">Organization + social branding + domain pipeline established.</span></li>
+            <li><strong data-i18n="now_label">Now</strong> — <span data-i18n="milestone_now">Reframe the homepage and restore the board service on new infrastructure.</span></li>
+            <li><strong data-i18n="next_label">Next</strong> — <span data-i18n="milestone_next">Harden board UX: pagination, shared view counts, and stronger detail flow.</span></li>
+            <li><strong data-i18n="later_label">Later</strong> — <span data-i18n="milestone_later">Expand experiments into standalone tools and public product updates.</span></li>
           </ul>
         </div>
       </section>
@@ -212,12 +216,12 @@
 
       <section id="labs" class="container section home-section">
         <h2 data-i18n="labs_title">Labs</h2>
-        <p data-i18n="labs_intro">Experimental products, automation tools, and side builds that may evolve into full services.</p>
+        <p data-i18n="labs_intro_new">Small experiments with a path toward real products. Each lab exists to test a useful direction, not just to sit as a concept.</p>
         <div class="cards labs-cards">
           <a class="card card-link" href="./labs.html#lab-board-engine">
             <h3 data-i18n="labs_1_title">Community Board Engine</h3>
-            <p data-i18n="labs_1_text">Live service for discussions, lightweight moderation, and rapid product feedback loops.</p>
-            <p class="small muted" data-i18n="labs_1_meta">status: live · type: platform</p>
+            <p data-i18n="labs_1_text">The feedback engine at the heart of stewrobot, now being rebuilt on fresh infrastructure.</p>
+            <p class="small muted" data-i18n="labs_1_meta">status: rebuilding · type: platform</p>
           </a>
           <a class="card card-link" href="./labs.html#lab-workflow-runner">
             <h3 data-i18n="labs_2_title">Agent Workflow Runner</h3>
@@ -232,30 +236,6 @@
         </div>
       </section>
 
-      <section id="deploy" class="container section home-section">
-        <h2 data-i18n="deploy_title">Deploy</h2>
-        <p class="deploy-intro" data-i18n="deploy_intro">Deployment checklist and operations baseline for reliable service delivery.</p>
-        <ul class="checklist">
-          <li data-i18n-html="deploy_1">Install MySQL + PM2 + Nginx on production server</li>
-          <li data-i18n-html="deploy_2">Apply <code>sql/schema.sql</code> to MySQL database</li>
-          <li data-i18n-html="deploy_3">Set <code>.env</code> with production DB values and <code>USE_IN_MEMORY=false</code></li>
-          <li data-i18n-html="deploy_4">Run app on port 3000 via PM2 (<code>ecosystem.config.cjs</code>)</li>
-          <li data-i18n-html="deploy_5">Reverse proxy <code>board.stewrobot.com</code> → <code>127.0.0.1:3000</code></li>
-          <li data-i18n-html="deploy_6">Enable HTTPS certificate and verify CRUD + API docs</li>
-          <li data-i18n-html="deploy_7">Set daily DB backup + 14-day retention and monthly restore drill</li>
-          <li data-i18n-html="deploy_8">Monitor uptime, error logs, and certificate renewal status</li>
-        </ul>
-
-        <div class="ops-visual">
-          <h3 data-i18n="ops_title">Service map</h3>
-          <p class="ops-note" data-i18n="ops_note">This map shows how the public website, live board, and data layer connect in production.</p>
-          <div class="flow">
-            <div>stewrobot.com<br /><span>GitHub Pages</span></div>
-            <div>board.stewrobot.com<br /><span>Nginx + Node</span></div>
-            <div>MySQL<br /><span>Posts / Comments</span></div>
-          </div>
-        </div>
-      </section>
 
       
 
@@ -280,6 +260,24 @@
 
       const i18n = {
         ko: {
+          eyebrow_new: '🥘 보드 중심 AI 프로덕트 스튜디오',
+          hero_title_new: 'Board-first AI products, built in public.',
+          hero_lead_new: 'stewrobot은 라이브 피드백 루프를 중심에 둔 실용적 도구를 만듭니다. 빠르게 만들고, 공개적으로 배우고, 보드의 신호를 제품 방향으로 연결합니다.',
+          cta_board: '보드 열기', cta_labs: '랩스 보기',
+          about_title_new: 'stewrobot이 하는 일',
+          about_text_new: 'stewrobot은 유용한 것을 빠르게 만들고, 피드백 가까이에 머물고, 공개적으로 개선하는 운영 원칙 위에 세워진 AI 프로덕트 스튜디오입니다.',
+          identity_1_title: '실용성 우선', identity_1_text: '화려한 데모보다 실제 사용을 버티는 도구를 더 중요하게 봅니다.',
+          identity_2_title: '보드 중심 워크플로우', identity_2_text: '아이디어와 피드백, 우선순위가 비공개 폼 뒤로 사라지지 않고 보드를 통해 흐르도록 설계합니다.',
+          identity_3_title: '공개적으로 구축', identity_3_text: '진행 상황은 감추지 않고, 실제로 다음에 무엇을 만들지와 연결된 채 드러납니다.',
+          status_title_new: '현재 상태',
+          status_1_title_new: '✅ 퍼블릭 사이트 라이브', status_1_text_new: 'stewrobot.com은 GitHub Pages에서 프로젝트의 공개 얼굴로 운영 중입니다.',
+          status_2_title_new: '🛠️ 보드 재배포 진행 중', status_2_text_new: '보드 백엔드는 존재하지만, 이전 리눅스 호스트 손실 이후 운영 서버를 다시 구축하는 중입니다.',
+          status_3_title_new: '📦 제품 방향 정리 완료', status_3_text_new: '운영 모델은 분명합니다. 실용적인 AI 도구를 공개된 보드 중심 루프로 다듬어 갑니다.',
+          progress_log_title_new: 'Now / Next / Later', now_label: 'Now', next_label: 'Next', later_label: 'Later',
+          milestone_now: '홈페이지 메시지를 재정리하고 새 인프라에서 보드 서비스를 복구합니다.',
+          milestone_next: '보드 UX를 강화합니다: 페이지네이션, 공유 조회수, 상세 흐름 개선.',
+          milestone_later: '실험들을 독립적인 도구와 공개 제품 업데이트로 확장합니다.',
+          labs_intro_new: '작은 실험이지만 실제 제품으로 이어질 경로를 가진 것들입니다. 컨셉으로만 머무는 랩은 만들지 않습니다.',
           nav_home: '홈', nav_about: '개요', nav_status: '진행상황', nav_contact: '24/7', nav_labs: '랩스', nav_deploy: '배포',
           lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
@@ -302,7 +300,7 @@
           milestone_5: '조직/브랜딩/도메인 파이프라인 초기 구축',
           labs_title: '랩스',
           labs_intro: '향후 서비스로 발전 가능한 앱/솔루션/자동화 실험 프로젝트 공간입니다.',
-          labs_1_title: 'Community Board Engine', labs_1_text: '토론과 제품 피드백 루프를 위한 라이브 서비스.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: '토론과 제품 피드백 루프를 위한 라이브 서비스.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: '반복 작업 자동화를 위한 워크플로우 실행 실험.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: '모바일 중심 유틸리티 경험을 위한 실험.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'API 문서',
@@ -327,6 +325,24 @@
           footer_prefix: '©', footer_suffix: 'All rights reserved.'
         },
         en: {
+          eyebrow_new: '🥘 Board-first AI product studio',
+          hero_title_new: 'Board-first AI products, built in public.',
+          hero_lead_new: 'stewrobot builds practical tools with a live feedback loop at the center. We build fast, learn in public, and turn board signals into product direction.',
+          cta_board: 'Open the Board', cta_labs: 'Explore the Labs',
+          about_title_new: 'What stewrobot is',
+          about_text_new: 'stewrobot is an AI product studio built around one simple operating idea: ship useful things, stay close to feedback, and improve in public.',
+          identity_1_title: 'Practical by default', identity_1_text: 'We care less about flashy demos and more about tools that survive real use.',
+          identity_2_title: 'Board-first workflow', identity_2_text: 'Ideas, feedback, and direction are meant to flow through the board instead of disappearing into private forms.',
+          identity_3_title: 'Built in public', identity_3_text: 'Progress is visible, messy, iterative, and tied to what actually gets shipped next.',
+          status_title_new: 'Status',
+          status_1_title_new: '✅ Public site live', status_1_text_new: 'stewrobot.com is live on GitHub Pages as the public face of the project.',
+          status_2_title_new: '🛠️ Board redeploy in progress', status_2_text_new: 'The board backend exists, but the production server is being rebuilt after the previous Linux host was lost.',
+          status_3_title_new: '📦 Core product direction set', status_3_text_new: 'The operating model is now clear: practical AI tools, shaped through an open board-first loop.',
+          progress_log_title_new: 'Now / Next / Later', now_label: 'Now', next_label: 'Next', later_label: 'Later',
+          milestone_now: 'Reframe the homepage and restore the board service on new infrastructure.',
+          milestone_next: 'Harden board UX: pagination, shared view counts, and stronger detail flow.',
+          milestone_later: 'Expand experiments into standalone tools and public product updates.',
+          labs_intro_new: 'Small experiments with a path toward real products. Each lab exists to test a useful direction, not just to sit as a concept.',
           nav_home: 'Home', nav_about: 'Overview', nav_status: 'Progress', nav_contact: '24/7', nav_labs: 'Labs', nav_deploy: 'Deploy',
           lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
@@ -349,7 +365,7 @@
           milestone_5: 'Organization + social branding + domain pipeline established.',
           labs_title: 'Labs',
           labs_intro: 'Experimental products, automation tools, and side builds that may evolve into full services.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Live service for discussions, lightweight moderation, and rapid product feedback loops.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'The feedback engine at the heart of stewrobot, now being rebuilt on fresh infrastructure.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Task automation patterns for assistant-driven operations and repeatable execution flows.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Early product concepts for mobile-first utility experiences connected to the stewrobot ecosystem.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'API docs',
@@ -396,7 +412,7 @@
           milestone_5: '組織/ブランディング/ドメイン基盤を初期構築',
           labs_title: 'ラボ',
           labs_intro: '将来サービス化できるアプリ・ソリューション・自動化実験のプロジェクト領域です。',
-          labs_1_title: 'Community Board Engine', labs_1_text: '議論とフィードバックループのためのライブサービス。', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: '議論とフィードバックループのためのライブサービス。', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: '反復作業を自動化するワークフロー実験。', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'モバイル中心のユーティリティ体験に向けた実験。', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'APIドキュメント',
@@ -443,7 +459,7 @@
           milestone_5: 'Base de organización, branding social y dominio establecida.',
           labs_title: 'Labs',
           labs_intro: 'Espacio para experimentos de apps, soluciones y automatización que pueden convertirse en servicios.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Servicio en vivo para discusión y bucles rápidos de feedback.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'Servicio en vivo para discusión y bucles rápidos de feedback.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Patrones de automatización para operaciones asistidas por agentes.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Conceptos tempranos de utilidades móviles conectadas al ecosistema stewrobot.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'Documentación API',
@@ -488,7 +504,7 @@
           milestone_5: 'Base de organização, branding social e domínio estabelecida.',
           labs_title: 'Labs',
           labs_intro: 'Espaço para experimentos de apps, soluções e automações que podem evoluir para serviços.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Serviço ao vivo para discussões e feedback rápido.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'Serviço ao vivo para discussões e feedback rápido.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Padrões de automação para operações orientadas por agentes.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Conceitos iniciais de utilitários mobile conectados ao ecossistema stewrobot.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'Documentação da API',
@@ -533,7 +549,7 @@
           milestone_5: 'ऑर्गनाइज़ेशन, सोशल ब्रांडिंग और डोमेन पाइपलाइन स्थापित हुई।',
           labs_title: 'लैब्स',
           labs_intro: 'ऐप, समाधान और ऑटोमेशन प्रयोगों का स्थान जो आगे चलकर सेवाओं में बदल सकते हैं।',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'चर्चा और तेज़ फीडबैक लूप के लिए लाइव सेवा।', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'चर्चा और तेज़ फीडबैक लूप के लिए लाइव सेवा।', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'एजेंट-सहायता प्राप्त संचालन के लिए ऑटोमेशन पैटर्न।', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'stewrobot इकोसिस्टम से जुड़े मोबाइल यूटिलिटी कॉन्सेप्ट।', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'API दस्तावेज़',
@@ -578,7 +594,7 @@
           milestone_5: 'تأسيس بنية التنظيم والهوية الاجتماعية وخط النطاق.',
           labs_title: 'المختبرات',
           labs_intro: 'مساحة لتجارب التطبيقات والحلول والأتمتة التي قد تتطور إلى خدمات كاملة.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'خدمة مباشرة للنقاش وحلقات التغذية الراجعة السريعة.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'خدمة مباشرة للنقاش وحلقات التغذية الراجعة السريعة.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'أنماط أتمتة لعمليات مدعومة بالوكلاء.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'مفاهيم مبكرة لتجارب خدمية على الجوال ضمن منظومة stewrobot.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'توثيق API',
@@ -623,7 +639,7 @@
           milestone_5: 'Pipeline organisation + branding social + domaine mis en place.',
           labs_title: 'Labs',
           labs_intro: 'Espace pour des expérimentations d’apps, de solutions et d’automatisation.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Service en direct pour discussions et boucles de feedback rapides.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'Service en direct pour discussions et boucles de feedback rapides.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Automatisation des tâches répétitives avec des flux assistés par agents.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Concepts mobiles utilitaires connectés à l’écosystème stewrobot.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'Docs API',
@@ -668,7 +684,7 @@
           milestone_5: 'Organisation, Social-Branding und Domain-Pipeline aufgebaut.',
           labs_title: 'Labs',
           labs_intro: 'Bereich für App-, Lösungs- und Automatisierungs-Experimente mit Service-Potenzial.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Live-Dienst für Diskussionen und schnelle Feedback-Loops.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'Live-Dienst für Diskussionen und schnelle Feedback-Loops.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Automatisierungsabläufe für agentengestützte Operationen.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Frühe mobile Utility-Konzepte im stewrobot-Ökosystem.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'API-Doku',
@@ -713,7 +729,7 @@
           milestone_5: 'Fondasi organisasi, branding sosial, dan domain dibangun.',
           labs_title: 'Labs',
           labs_intro: 'Ruang eksperimen aplikasi, solusi, dan otomasi yang bisa berkembang menjadi layanan.',
-          labs_1_title: 'Community Board Engine', labs_1_text: 'Layanan live untuk diskusi dan loop umpan balik cepat.', labs_1_meta: 'status: live · type: platform',
+          labs_1_title: 'Community Board Engine', labs_1_text: 'Layanan live untuk diskusi dan loop umpan balik cepat.', labs_1_meta: 'status: rebuilding · type: platform',
           labs_2_title: 'Agent Workflow Runner', labs_2_text: 'Pola otomasi untuk operasi berbasis agen.', labs_2_meta: 'status: in progress · type: solution',
           labs_3_title: 'Mobile Companion Experiments', labs_3_text: 'Konsep utilitas mobile awal yang terhubung ke ekosistem stewrobot.', labs_3_meta: 'status: planned · type: app',
           board_title: '📋 24/7', board_api_link: 'Dokumentasi API',
@@ -828,7 +844,7 @@
         });
       });
       function setMainView(viewName) {
-        const homeMode = viewName === 'home' || viewName === 'overview' || viewName === 'progress' || viewName === 'labs' || viewName === 'deploy';
+        const homeMode = viewName === 'home' || viewName === 'overview' || viewName === 'progress' || viewName === 'labs';
 
         document.querySelectorAll('.home-section').forEach((el) => {
           el.style.display = homeMode ? '' : 'none';
@@ -851,8 +867,6 @@
           document.getElementById('status')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (viewName === 'labs') {
           document.getElementById('labs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else if (viewName === 'deploy') {
-          document.getElementById('deploy')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           showCommunityList();
@@ -1097,7 +1111,7 @@
 
 
       const menuStepBtn = document.getElementById('menuStepBtn');
-      const bookmarkIds = ['top', 'about', 'status', 'labs', 'deploy', 'board'];
+      const bookmarkIds = ['top', 'about', 'status', 'labs', 'board'];
 
       const syncBackToTop = () => {
         if (!menuStepBtn) return;
@@ -1129,7 +1143,7 @@
 
       const qs = new URLSearchParams(window.location.search);
       const initialView = qs.get('view');
-      if (initialView && ['home','overview','progress','labs','deploy','community'].includes(initialView)) {
+      if (initialView && ['home','overview','progress','labs','community'].includes(initialView)) {
         setMainView(initialView);
       } else if (qs.get('back') === '1') {
         history.replaceState(null, '', '/');
