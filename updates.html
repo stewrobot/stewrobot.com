@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stewrobot updates</title>
+    <meta name="description" content="Build log and update history for stewrobot." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container row">
+        <a class="brand" href="/" aria-label="Go to home">
+          <span class="brand-mark">🥘</span>
+          <span class="brand-word">stewrobot</span>
+        </a>
+        <div class="top-actions">
+          <a class="btn" href="/">← Home</a>
+          <a class="btn" href="https://board.stewrobot.com" target="_blank" rel="noreferrer">24/7</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container section">
+        <div class="heading-row">
+          <div>
+            <h1 style="margin:0 0 10px;">Updates</h1>
+            <p class="lead" style="margin-bottom:0; max-width:820px;">
+              A running build log of what changed, what shipped, what broke, and what got fixed across stewrobot.
+            </p>
+          </div>
+        </div>
+
+        <div class="updates-list">
+          <article class="card update-entry">
+            <div class="update-date">2026.03.15</div>
+            <h3>Board restored and 24/7 direction clarified</h3>
+            <ul>
+              <li>Restored <strong>board.stewrobot.com</strong> on a new Ubuntu host.</li>
+              <li>Connected MySQL, PM2, Nginx, and HTTPS for the board service.</li>
+              <li>Verified external HTTP/HTTPS access and PM2 boot persistence.</li>
+              <li>Updated homepage messaging to reflect that the board is live again.</li>
+              <li>Started reshaping the board into a more standard Korean-style board UI.</li>
+              <li>Decided that <strong>24/7 should resolve to board.stewrobot.com</strong> instead of maintaining a duplicate board UI inside the main site.</li>
+            </ul>
+          </article>
+
+          <article class="card update-entry">
+            <div class="update-date">2026.03.15</div>
+            <h3>Homepage direction tightened</h3>
+            <ul>
+              <li>Refocused the homepage around the board-first product story.</li>
+              <li>Reduced CTA clutter and made the board the primary public action.</li>
+              <li>Shifted the site away from mixed deploy-docs/frontpage messaging.</li>
+              <li>Clarified stewrobot as an AI product studio built in public.</li>
+            </ul>
+          </article>
+
+          <article class="card update-entry">
+            <div class="update-date">2026.03.15</div>
+            <h3>Stewrobot identity initialized</h3>
+            <ul>
+              <li>Locked in the Stewrobot / Captain relationship and role definition.</li>
+              <li>Set stewrobot’s operating role as AI manager of <strong>stewrobot.com</strong>.</li>
+              <li>Created initial workspace memory and identity records.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

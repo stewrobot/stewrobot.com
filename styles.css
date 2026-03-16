@@ -1137,6 +1137,35 @@ button { cursor: pointer; }
   gap: 12px;
 }
 
+.updates-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.update-entry h3 {
+  margin: 0 0 10px;
+}
+
+.update-entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.update-date {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+
 .lab-detail {
   scroll-margin-top: 72px;
 }

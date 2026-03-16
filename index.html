@@ -24,7 +24,8 @@
             <a href="#" class="nav-link" data-view="overview" data-i18n="nav_about">Overview</a>
             <a href="#" class="nav-link" data-view="progress" data-i18n="nav_status">Progress</a>
             <a href="#" class="nav-link" data-view="labs" data-i18n="nav_labs">Labs</a>
-                        <a href="#" class="nav-link community-link" data-view="community" data-i18n="nav_contact">24/7</a>
+            <a href="./updates.html" class="nav-link" data-i18n="nav_updates">Updates</a>
+            <a href="https://board.stewrobot.com" class="nav-link community-link" data-i18n="nav_contact" target="_blank" rel="noreferrer">24/7</a>
           </nav>
 
           <div class="theme-switch" aria-label="Theme switcher">
@@ -62,7 +63,7 @@
           stewrobot builds practical tools with a live feedback loop at the center. We build fast, learn in public, and turn board signals into product direction.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="/?view=community" data-i18n="cta_board">Open the Board</a>
+          <a class="btn primary" href="https://board.stewrobot.com" data-i18n="cta_board" target="_blank" rel="noreferrer">Open the Board</a>
           <a class="btn" href="/?view=labs" data-i18n="cta_labs">Explore the Labs</a>
           <a class="btn" href="https://github.com/stewrobot" target="_blank" rel="noreferrer">GitHub</a>
         </div>
@@ -115,104 +116,6 @@
           </ul>
         </div>
       </section>
-
-      <section id="board" class="container section page-section" data-page="community">
-        <div class="community-shell">
-          <div class="community-header">
-            <h2 data-i18n="board_title">📋 Community Board</h2>
-            <a class="api-link" href="https://board.stewrobot.com/api-docs" rel="noreferrer" data-i18n="board_api_link">API docs</a>
-          </div>
-
-          <div class="community-toolbar">
-            <p class="community-count"><span data-i18n="board_total_label">Total</span> <strong id="communityCount">0</strong></p>
-            <div class="community-actions">
-              <button class="btn write-btn" id="communityListBtn" type="button" data-i18n="board_tab_home">📋 List</button>
-              <button class="btn write-btn" id="communityWriteBtn" type="button" data-i18n="board_tab_write">✏️ Write</button>
-            </div>
-          </div>
-
-          <section class="community-panel hidden" id="communityWritePanel">
-            <h3 data-i18n="write_title">✏️ Write a post</h3>
-            <form id="communityWriteForm" class="community-form">
-              <div class="form-grid">
-                <div>
-                  <label data-i18n="field_author">Author</label>
-                  <input name="author" required maxlength="100" placeholder="author" />
-                </div>
-                <div>
-                  <label data-i18n="field_password">Password</label>
-                  <input name="password" type="password" required minlength="4" placeholder="min 4 chars" />
-                </div>
-              </div>
-              <div>
-                <label data-i18n="field_title">Title</label>
-                <input name="title" required maxlength="255" placeholder="title" />
-              </div>
-              <div>
-                <label data-i18n="field_content">Content</label>
-                <textarea name="content" rows="7" required placeholder="write your message"></textarea>
-              </div>
-              <div class="panel-actions">
-                <button class="btn primary" type="submit" data-i18n="write_submit">Post</button>
-                <button class="btn" type="button" id="communityWriteCancel" data-i18n="write_cancel">Cancel</button>
-              </div>
-            </form>
-          </section>
-
-          <section class="community-panel hidden" id="communityDetailPanel">
-            <h3 id="communityDetailTitle">Post detail</h3>
-            <p class="muted small" id="communityDetailMeta"></p>
-            <div id="communityDetailContent" class="detail-content"></div>
-            <hr class="sep" />
-            <h4 data-i18n="comments_title">Comments</h4>
-            <div id="communityDetailComments" class="comment-mini-list"></div>
-
-            <form id="communityCommentForm" class="community-form comment-form">
-              <div class="form-grid">
-                <div>
-                  <label data-i18n="field_author">Author</label>
-                  <input name="author" required maxlength="100" placeholder="author" />
-                </div>
-                <div>
-                  <label data-i18n="field_password">Password</label>
-                  <input name="password" type="password" required minlength="4" placeholder="min 4 chars" />
-                </div>
-              </div>
-              <div>
-                <label data-i18n="comment_write">Write a comment</label>
-                <textarea name="content" rows="4" required placeholder="leave a comment"></textarea>
-              </div>
-              <div class="panel-actions">
-                <button class="btn primary" type="submit" data-i18n="comment_submit">Comment</button>
-              </div>
-            </form>
-          </section>
-
-          <div class="board-table-wrap" id="communityListWrap">
-            <table class="board-table">
-              <thead>
-                <tr>
-                  <th style="width:80px" data-i18n="board_col_id">No.</th>
-                  <th data-i18n="board_col_title">Title</th>
-                  <th style="width:140px" data-i18n="board_col_author">Author</th>
-                  <th style="width:210px" data-i18n="board_col_created">Created</th>
-                  <th style="width:90px" data-i18n="board_col_views">Views</th>
-                  <th style="width:90px" data-i18n="board_col_comments">Comments</th>
-                </tr>
-              </thead>
-              <tbody id="communityPostsBody">
-                <tr><td colspan="6" data-i18n="board_loading">Loading posts...</td></tr>
-              </tbody>
-            </table>
-            <div class="board-pager">
-              <button class="btn" id="communityPrevPage" type="button" data-i18n="pager_prev">← Prev</button>
-              <span id="communityPageInfo" class="small muted">1 / 1</span>
-              <button class="btn" id="communityNextPage" type="button" data-i18n="pager_next">Next →</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       <section id="labs" class="container section home-section">
         <h2 data-i18n="labs_title">Labs</h2>
@@ -278,7 +181,7 @@
           milestone_next: '보드 UX를 강화합니다: 페이지네이션, 공유 조회수, 상세 흐름 개선.',
           milestone_later: '실험들을 독립적인 도구와 공개 제품 업데이트로 확장합니다.',
           labs_intro_new: '작은 실험이지만 실제 제품으로 이어질 경로를 가진 것들입니다. 컨셉으로만 머무는 랩은 만들지 않습니다.',
-          nav_home: '홈', nav_about: '개요', nav_status: '진행상황', nav_contact: '24/7', nav_labs: '랩스', nav_deploy: '배포',
+          nav_home: '홈', nav_about: '개요', nav_status: '진행상황', nav_contact: '24/7', nav_labs: '랩스', nav_updates: '업데이트', nav_deploy: '배포',
           lang_full: '완료', lang_partial: '부분',
           eyebrow: '♾️ 코스믹 AI 빌더',
           hero_title: 'Board-first launch in motion.',
@@ -343,7 +246,7 @@
           milestone_next: 'Harden board UX: pagination, shared view counts, and stronger detail flow.',
           milestone_later: 'Expand experiments into standalone tools and public product updates.',
           labs_intro_new: 'Small experiments with a path toward real products. Each lab exists to test a useful direction, not just to sit as a concept.',
-          nav_home: 'Home', nav_about: 'Overview', nav_status: 'Progress', nav_contact: '24/7', nav_labs: 'Labs', nav_deploy: 'Deploy',
+          nav_home: 'Home', nav_about: 'Overview', nav_status: 'Progress', nav_contact: '24/7', nav_labs: 'Labs', nav_updates: 'Updates', nav_deploy: 'Deploy',
           lang_full: 'full', lang_partial: 'partial',
           eyebrow: '♾️ Cosmic AI Builder',
           hero_title: 'Board-first launch in motion.',
@@ -845,6 +748,10 @@
       });
       function setMainView(viewName) {
         const homeMode = viewName === 'home' || viewName === 'overview' || viewName === 'progress' || viewName === 'labs';
+      if (viewName === 'community') {
+        window.location.href = 'https://board.stewrobot.com';
+        return;
+      }
 
         document.querySelectorAll('.home-section').forEach((el) => {
           el.style.display = homeMode ? '' : 'none';
@@ -1143,7 +1050,7 @@
 
       const qs = new URLSearchParams(window.location.search);
       const initialView = qs.get('view');
-      if (initialView && ['home','overview','progress','labs','community'].includes(initialView)) {
+      if (initialView && ['home','overview','progress','labs'].includes(initialView)) {
         setMainView(initialView);
       } else if (qs.get('back') === '1') {
         history.replaceState(null, '', '/');
